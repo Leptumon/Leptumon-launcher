@@ -1,7 +1,7 @@
 {
   "name": "leptumon-launcher",
   "productName": "Leptumon Launcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The official launcher for the Leptumon Minecraft server.",
   "main": ".webpack/main",
   "scripts": {

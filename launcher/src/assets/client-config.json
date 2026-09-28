@@ -1,7 +1,7 @@
 {
   "microsoftClientId": "ac0cda15-bdc4-4e19-88bf-b1c884a0e8f7",
   "modpack": {
-    "manifestUrl": ""
+    "manifestUrl": "https://leptunia.fr/manifest.json"
   },
   "curseforge": {
     "apiKey": "",
@@ -17,9 +17,9 @@
     "store": "https://leptumon-webshop.tebex.io/"
   },
   "news": {
-    "url": ""
+    "url": "https://leptunia.fr/news/v1/public/news"
   },
   "updates": {
-    "githubRepo": "Leptumon/leptumon-launcher"
+    "githubRepo": "Leptumon/Leptumon-launcher"
   }
 }
