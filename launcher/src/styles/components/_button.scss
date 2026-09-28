@@ -1,0 +1,123 @@
+@use '../base/variables' as vars;
+
+// Shared button (components/Button.tsx). Every button sinks slightly on press.
+.ui-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+    height: vars.$control-height;
+    padding: 0 14px;
+    border: 0;
+    border-radius: vars.$radius-md;
+    font-size: vars.$text-base;
+    font-weight: vars.$weight-medium;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        background-color vars.$duration-fast ease,
+        color vars.$duration-fast ease,
+        box-shadow vars.$duration-fast ease,
+        transform vars.$duration-fast vars.$ease-out;
+
+    &:active:not(:disabled) {
+        transform: scale(0.97);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &--sm {
+        height: 30px;
+        padding: 0 12px;
+        gap: 6px;
+        font-size: vars.$text-sm;
+        border-radius: 8px;
+
+        .ui-button__icon svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &--lg {
+        height: 44px;
+        padding: 0 20px;
+        gap: 10px;
+        font-size: vars.$text-lg;
+        border-radius: vars.$radius-lg;
+
+        .ui-button__icon svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &--primary {
+        background-color: vars.$accent;
+        color: vars.$text-on-accent;
+        font-weight: vars.$weight-semibold;
+
+        &:hover:not(:disabled) {
+            background-color: vars.$accent-hover;
+        }
+
+        &:active:not(:disabled) {
+            background-color: vars.$accent-pressed;
+        }
+    }
+
+    &--secondary {
+        background-color: vars.$control;
+        color: vars.$text;
+        box-shadow: inset 0 0 0 1px vars.$hairline;
+
+        &:hover:not(:disabled) {
+            background-color: vars.$control-hover;
+        }
+
+        &:active:not(:disabled) {
+            background-color: vars.$control-active;
+        }
+    }
+
+    &--danger {
+        background-color: vars.$danger-soft;
+        color: vars.$danger;
+
+        &:hover:not(:disabled) {
+            background-color: vars.$danger-soft-hover;
+        }
+    }
+
+    &--ghost {
+        background-color: transparent;
+        color: vars.$text-muted;
+
+        &:hover:not(:disabled) {
+            background-color: vars.$control;
+            color: vars.$text;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ui-button:active:not(:disabled) {
+        transform: none;
+    }
+}

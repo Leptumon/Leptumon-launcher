@@ -1,0 +1,128 @@
+@use '../base/variables' as vars;
+
+// RAM slider and presets (components/MemorySlider.tsx).
+.memory-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 2px;
+
+    &__range {
+        -webkit-appearance: none;
+        appearance: none;
+        display: block;
+        width: 100%;
+        height: 20px;
+        margin: 0;
+        background: transparent;
+        cursor: pointer;
+
+        // Filled part in the accent, the rest a neutral track. --fill is set inline.
+        &::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: vars.$radius-pill;
+            background: linear-gradient(
+                to right,
+                vars.$accent 0%,
+                vars.$accent var(--fill),
+                vars.$control-active var(--fill),
+                vars.$control-active 100%
+            );
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            margin-top: -6px;
+            border-radius: 50%;
+            background-color: vars.$knob;
+            box-shadow: vars.$shadow-knob, 0 0 0 0 vars.$accent-soft;
+            transition:
+                box-shadow vars.$duration-base vars.$ease-out,
+                transform vars.$duration-fast vars.$ease-out;
+        }
+
+        &:hover::-webkit-slider-thumb {
+            box-shadow: vars.$shadow-knob, 0 0 0 6px vars.$accent-soft;
+        }
+
+        &:active::-webkit-slider-thumb {
+            transform: scale(0.92);
+            box-shadow: vars.$shadow-knob, 0 0 0 8px vars.$accent-soft;
+        }
+
+        &:focus-visible {
+            outline: none;
+
+            &::-webkit-slider-thumb {
+                box-shadow: vars.$shadow-knob, 0 0 0 3px vars.$focus-ring;
+            }
+        }
+
+        &:disabled {
+            cursor: default;
+            opacity: 0.5;
+        }
+    }
+
+    &__presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+}
+
+.memory-preset {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 28px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: vars.$radius-pill;
+    background-color: vars.$control;
+    box-shadow: inset 0 0 0 1px vars.$hairline;
+    color: vars.$text-muted;
+    font-size: vars.$text-sm;
+    font-weight: vars.$weight-medium;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    transition:
+        background-color vars.$duration-fast ease,
+        color vars.$duration-fast ease,
+        box-shadow vars.$duration-fast ease,
+        transform vars.$duration-fast vars.$ease-out;
+
+    &:hover {
+        background-color: vars.$control-hover;
+        color: vars.$text;
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+
+    &.is-selected {
+        background-color: vars.$accent-soft;
+        box-shadow: inset 0 0 0 1px vars.$accent-line;
+        color: vars.$accent;
+    }
+
+    &__badge {
+        font-size: vars.$text-xs;
+        font-weight: vars.$weight-regular;
+        color: vars.$text-dim;
+
+        .is-selected & {
+            color: vars.$accent-text-muted;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .memory-preset:active,
+    .memory-slider__range:active::-webkit-slider-thumb {
+        transform: none;
+    }
+}

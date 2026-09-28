@@ -1,0 +1,57 @@
+@use '../base/variables' as vars;
+
+.titlebar {
+    user-select: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: relative;
+    height: vars.$titlebar-height;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    -webkit-app-region: drag;
+
+    // macOS: the native traffic lights sit over this empty drag region (main/window.ts).
+
+    .app-info {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .logo {
+            height: 80%;
+            aspect-ratio: 1 / 1;
+            margin-right: 5px;
+
+            img {
+                width: 100%
+            }
+        }
+    }
+
+    .generic-controls {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        -webkit-app-region: none;
+
+        .button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            margin-left: 15px;
+
+            svg {
+                color: vars.$text-muted;
+                transition: color vars.$duration-fast ease;
+            }
+
+            &:hover svg {
+                color: vars.$text;
+            }
+        }
+    }
+}

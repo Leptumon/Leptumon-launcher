@@ -1,0 +1,46 @@
+# Needs a .env file next to this one (copy .env.example and fill it in).
+#
+#   docker compose --profile https up -d --build
+#       The news API plus Caddy, which gets and renews an HTTPS certificate for
+#       DOMAIN on its own. For a server with no website on ports 80/443 yet.
+#
+#   docker compose up -d --build
+#       The news API alone, on 127.0.0.1:8787, for a server that already runs
+#       nginx or another web server (see deploy/nginx.conf.example).
+services:
+  news:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      DATA_DIR: /data
+      # Only a proxy on this machine can reach the port, so trusting one hop is safe.
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - news-data:/data
+
+  caddy:
+    image: caddy:2-alpine
+    profiles: [https]
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:-}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - news
+
+volumes:
+  news-data:
+  caddy-data:
+  caddy-config:

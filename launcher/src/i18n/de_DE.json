@@ -1,0 +1,123 @@
+{
+    "login_ms": "Mit Microsoft-Konto anmelden",
+    "auth_successful": "Anmeldung erfolgreich!",
+    "auth_successful_desc": "Du kannst dieses Fenster jetzt schließen und zum Launcher zurückkehren.",
+    "auth_failed": "Anmeldung fehlgeschlagen",
+    "auth_failed_desc": "Ein Fehler ist aufgetreten. Bitte versuche es erneut oder kontaktiere den Support, wenn das Problem weiterhin besteht.",
+    "auth_missing_code": "Autorisierungscode fehlt.",
+    "auth_invalid_state": "Ungültiger Anmeldestatus. Bitte starte die Anmeldung erneut über den Launcher.",
+    "launching_as": "Starte als <username>",
+    "play": "Spielen",
+    "stop": "Stoppen",
+    "home": "Startseite",
+    "settings": "Einstellungen",
+    "settings_sections": {
+        "game": "Spiel",
+        "launcher": "Launcher",
+        "account": "Konto"
+    },
+    "memory": {
+        "title": "Arbeitsspeicher",
+        "description": "Wie viel RAM das Spiel nutzen darf. Leptumon braucht mindestens 6 GB.",
+        "recommended": "Empfohlen"
+    },
+    "units": {
+        "gb": "<value> GB"
+    },
+    "advanced": {
+        "title": "Erweitert",
+        "description": "Java-Optionen für erfahrene Spieler."
+    },
+    "custom_jvm_args": {
+        "title": "Eigene JVM-Argumente",
+        "description": "Werden beim Spielstart angehängt, durch Leerzeichen getrennt."
+    },
+    "microsoft_account": "Microsoft-Konto",
+    "log_out": "Abmelden",
+    "language": "Sprache",
+    "store": "Shop",
+    "auto_join": {
+        "title": "Beim Start dem Server beitreten",
+        "description": "Verbindet sich mit Leptumon, sobald das Spiel geladen ist."
+    },
+    "minimize_on_launch": {
+        "title": "Beim Spielen minimieren",
+        "description": "Blendet den Launcher aus, wenn das Spiel startet."
+    },
+    "server_status": {
+        "checking": "Wird geprüft...",
+        "online": "Online",
+        "offline": "Offline"
+    },
+    "news": {
+        "title": "Neuigkeiten",
+        "empty": "Noch keine Neuigkeiten.",
+        "error": "Die Neuigkeiten konnten nicht geladen werden.",
+        "retry": "Erneut versuchen",
+        "previous": "Vorheriger Artikel",
+        "next": "Nächster Artikel",
+        "open_link": "Link öffnen",
+        "close": "Schließen"
+    },
+    "menu": {
+        "edit": "Bearbeiten",
+        "view": "Darstellung"
+    },
+    "update": {
+        "title": "Launcher-Update",
+        "ready_message": "Leptumon Launcher <version> ist bereit. Jetzt neu starten, um zu aktualisieren?",
+        "manual_message": "Leptumon Launcher <version> ist verfügbar. Jetzt herunterladen?",
+        "restart": "Neu starten",
+        "download": "Herunterladen",
+        "later": "Später"
+    },
+    "stop_game": {
+        "title": "Spiel beenden?",
+        "message": "Das Spiel läuft gerade. Möchtest du es beenden?",
+        "confirm": "Beenden",
+        "cancel": "Abbrechen"
+    },
+    "cancel_launch": {
+        "title": "Start abbrechen?",
+        "message": "Die Installation läuft. Möchtest du abbrechen?",
+        "confirm": "Ja, abbrechen",
+        "cancel": "Nein"
+    },
+    "launch": {
+        "initializing": "Spielsitzung wird vorbereitet...",
+        "modpack_checking": "Modpack wird geprüft...",
+        "modpack_downloading_pack": "Modpack wird heruntergeladen (<percent> %)",
+        "modpack_resolving": "Modliste wird vorbereitet...",
+        "modpack_downloading": "Mods werden heruntergeladen (<done>/<total>)",
+        "modpack_downloading_files": "Modpack-Dateien werden heruntergeladen (<done>/<total>)",
+        "modpack_applying": "Modpack-Dateien werden angewendet...",
+        "modpack_ready": "Modpack ist bereit...",
+        "java_checking": "Java-Installation wird geprüft...",
+        "java_downloading": "Java-Laufzeit wird heruntergeladen (<percent> %)",
+        "java_ready": "Java-Laufzeit ist bereit...",
+        "loader_installing": "<name>-Loader wird installiert...",
+        "loader_installed": "<type>-Loader ist installiert...",
+        "downloading_assets": "Spiel-Assets werden heruntergeladen (<percent> %)",
+        "downloading_libraries": "Spielbibliotheken werden heruntergeladen (<percent> %)",
+        "downloading_client": "Spiel-Client wird heruntergeladen (<percent> %)",
+        "downloading_files": "Spieldateien werden heruntergeladen (<percent> %)",
+        "running": "Spielsitzung wird gestartet...",
+        "cancelled": "Start abgebrochen...",
+        "error": "Start fehlgeschlagen: <message>"
+    },
+    "errors": {
+        "no_account": "Kein Konto ausgewählt",
+        "session_expired": "Sitzung abgelaufen oder ungültig. Bitte melde dich ab und wieder an.",
+        "modpack_not_configured": "Die Modpack-Version wurde noch nicht eingerichtet. Schau bald wieder vorbei!",
+        "modpack_manifest_unreachable": "Der Leptumon-Dateiserver ist nicht erreichbar. Prüfe deine Verbindung und klicke auf Spielen, um es erneut zu versuchen.",
+        "modpack_download_failed": "Das Modpack konnte nicht heruntergeladen werden. Bitte versuche es gleich noch einmal.",
+        "modpack_unsupported_loader": "Dieses Modpack nutzt einen Mod-Loader, den der Launcher nicht unterstützt.",
+        "modpack_blocked_mods": "<count> Mod(s) in diesem Modpack erlauben keine Downloads über Launcher, daher kann die Einrichtung nicht abgeschlossen werden. Bitte gib dem Leptumon-Team Bescheid.",
+        "modpack_files_failed": "<count> Modpack-Datei(en) konnten nicht heruntergeladen werden. Prüfe deine Verbindung und klicke auf Spielen, um es erneut zu versuchen.",
+        "microsoft_unavailable_title": "Microsoft-Anmeldung nicht verfügbar",
+        "microsoft_unavailable_message": "Die Microsoft-Anmeldung konnte nicht gestartet werden.",
+        "unexpected_title": "Unerwarteter Fehler",
+        "unexpected_error": "Ein unerwarteter Fehler ist aufgetreten",
+        "unexpected_promise_error": "Ein unerwarteter asynchroner Fehler ist aufgetreten"
+    }
+}

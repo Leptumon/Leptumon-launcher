@@ -1,0 +1,27 @@
+# systemd unit for running the news API without Docker.
+#   sudo cp deploy/leptumon-news.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now leptumon-news
+# Assumes the folder is /opt/leptumon-news, owned by a "leptumon-news" user,
+# with .env filled in and `npm ci --omit=dev` already run.
+[Unit]
+Description=Leptumon launcher news API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=leptumon-news
+WorkingDirectory=/opt/leptumon-news
+EnvironmentFile=/opt/leptumon-news/.env
+ExecStart=/usr/bin/env node src/server.js
+Restart=on-failure
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/leptumon-news/data
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,86 @@
+{
+  "name": "leptumon-launcher",
+  "productName": "Leptumon Launcher",
+  "version": "1.0.0",
+  "description": "The official launcher for the Leptumon Minecraft server.",
+  "main": ".webpack/main",
+  "scripts": {
+    "prepackage": "node scripts/check-node-version.js",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "premake": "node scripts/check-node-version.js",
+    "make": "electron-forge make",
+    "lint": "eslint --ext .ts,.tsx ."
+  },
+  "engines": {
+    "node": ">=22.15 <25"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Leptumon"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.1",
+    "@electron-forge/maker-deb": "^7.8.1",
+    "@electron-forge/maker-dmg": "^7.11.1",
+    "@electron-forge/maker-rpm": "^7.8.1",
+    "@electron-forge/maker-squirrel": "^7.8.1",
+    "@electron-forge/maker-zip": "^7.8.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
+    "@electron-forge/plugin-fuses": "^7.8.1",
+    "@electron-forge/plugin-webpack": "^7.8.1",
+    "@electron/fuses": "^1.8.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/yauzl": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "css-loader": "^6.11.0",
+    "electron": "42.11.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "extract-zip": "file:vendor/extract-zip",
+    "fork-ts-checker-webpack-plugin": "^7.3.0",
+    "image-size": "file:vendor/image-size",
+    "node-loader": "^2.1.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~4.5.4"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^8.2.0",
+    "express": "^5.2.1",
+    "jose": "^6.0.11",
+    "motion": "^12.23.3",
+    "prismarine-nbt": "^2.8.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.18.3",
+    "react-spinners": "^0.17.0",
+    "sass": "^1.89.2",
+    "tar": "^7.5.22",
+    "yauzl": "^3.4.0"
+  },
+  "overrides": {
+    "@electron/rebuild": "4.0.4",
+    "@inquirer/prompts": "8.5.2",
+    "webpack-dev-server": "6.0.0",
+    "qs": "6.16.0",
+    "sockjs": {
+      "uuid": "11.1.1"
+    },
+    "ws": "8.21.0",
+    "extract-zip": "$extract-zip",
+    "body-parser@2": "2.3.0",
+    "image-size": "$image-size"
+  },
+  "optionalDependencies": {
+    "appdmg": "^0.6.6"
+  }
+}

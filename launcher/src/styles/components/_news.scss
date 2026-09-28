@@ -1,0 +1,349 @@
+@use '../base/variables' as vars;
+
+// Home news panel (components/News.tsx): the same glass card as the launch
+// card beside it, holding a sideways row of article cards.
+.news {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12px 0;
+    border-radius: vars.$radius-2xl;
+    overflow: hidden;
+    background-color: vars.$surface;
+    box-shadow: inset 0 0 0 1px vars.$hairline;
+    animation: news-in vars.$duration-slow vars.$ease-out;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 24px;
+        margin-bottom: 8px;
+        padding: 0 12px 0 18px;
+    }
+
+    &__heading {
+        margin: 0;
+        font-size: vars.$text-lg;
+        font-weight: vars.$weight-semibold;
+        letter-spacing: vars.$tracking-tight;
+    }
+
+    // Holds the card row and the arrows floating over its edges.
+    &__viewport {
+        position: relative;
+        display: flex;
+        flex: 1;
+        min-height: 0;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(8px);
+        box-shadow: inset 0 0 0 1px vars.$hairline-strong, 0 2px 8px rgba(0, 0, 0, 0.3);
+        color: vars.$text;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition:
+            opacity vars.$duration-base ease,
+            background-color vars.$duration-fast ease,
+            transform vars.$duration-fast vars.$ease-out;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.55);
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        &:active {
+            transform: translateY(-50%) scale(0.94);
+        }
+
+        &--prev {
+            left: 18px;
+        }
+
+        &--next {
+            right: 18px;
+        }
+
+        &.is-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &__track {
+        --fade-start: 0px;
+        --fade-end: 0px;
+
+        position: relative;
+        display: flex;
+        flex: 1;
+        gap: 10px;
+        min-width: 0;
+        min-height: 0;
+        padding: 0 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        // Cards hidden past an edge fade out there, a hint that the row scrolls.
+        mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            #000 var(--fade-start),
+            #000 calc(100% - var(--fade-end)),
+            transparent 100%
+        );
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &--fade-start {
+            --fade-start: 28px;
+        }
+
+        &--fade-end {
+            --fade-end: 28px;
+        }
+    }
+
+    &__message {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 0 18px 8px;
+        font-size: vars.$text-sm;
+        color: vars.$text-muted;
+        text-align: center;
+    }
+}
+
+.news-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    width: 208px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 0;
+    border-radius: vars.$radius-lg;
+    overflow: hidden;
+    background-color: vars.$control;
+    box-shadow: inset 0 0 0 1px vars.$hairline;
+    color: vars.$text;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    transition:
+        background-color vars.$duration-fast ease,
+        transform vars.$duration-fast vars.$ease-out;
+
+    &:hover {
+        background-color: vars.$control-hover;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform vars.$duration-slow vars.$ease-out;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+
+    &__date {
+        font-size: vars.$text-xs;
+        font-weight: vars.$weight-medium;
+        color: vars.$text-muted;
+    }
+
+    &__title {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: vars.$text-base;
+        font-weight: vars.$weight-semibold;
+        line-height: 1.3;
+        letter-spacing: vars.$tracking-tight;
+        overflow-wrap: anywhere;
+    }
+
+    &__excerpt {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: vars.$text-sm;
+        line-height: 1.4;
+        color: vars.$text-muted;
+        overflow-wrap: anywhere;
+    }
+
+    // With a picture: text sits at the bottom over a shade that keeps it readable.
+    &--image {
+        justify-content: flex-end;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0) 80%);
+            box-shadow: inset 0 0 0 1px vars.$hairline;
+            pointer-events: none;
+        }
+
+        .news-card__text {
+            z-index: 2;
+        }
+
+        .news-card__date {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        &:hover .news-card__image {
+            transform: scale(1.04);
+        }
+    }
+
+    &--skeleton {
+        cursor: default;
+        animation: news-pulse 1.4s ease-in-out infinite;
+
+        &:hover {
+            background-color: vars.$control;
+        }
+
+        &:active {
+            transform: none;
+        }
+    }
+}
+
+// Article dialog (components/NewsArticleDialog.tsx), built on the shared modal card.
+.modal-card.news-dialog {
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    max-height: calc(100% - 80px);
+    padding: 0;
+    overflow: hidden;
+}
+
+.news-dialog {
+    &__image {
+        display: block;
+        flex-shrink: 0;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 260px;
+        object-fit: cover;
+        background-color: vars.$control;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        padding: 20px 20px 0;
+        overflow-y: auto;
+    }
+
+    &__date {
+        margin-bottom: 4px;
+        font-size: vars.$text-xs;
+        font-weight: vars.$weight-medium;
+        color: vars.$text-muted;
+    }
+
+    &__body {
+        margin: 4px 0 0;
+        font-size: vars.$text-base;
+        line-height: 1.6;
+        color: vars.$text-muted;
+        white-space: pre-line;
+        overflow-wrap: anywhere;
+        user-select: text;
+    }
+
+    &__actions {
+        flex-shrink: 0;
+        padding: 0 20px 20px;
+    }
+}
+
+@keyframes news-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes news-pulse {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .news,
+    .news-card--skeleton {
+        animation: none;
+    }
+
+    .news-card:active {
+        transform: none;
+    }
+
+    .news__arrow:hover,
+    .news__arrow:active {
+        transform: translateY(-50%);
+    }
+
+    .news-card--image:hover .news-card__image {
+        transform: none;
+    }
+}

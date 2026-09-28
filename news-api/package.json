@@ -1,0 +1,19 @@
+{
+  "name": "leptumon-news-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "News feed and admin panel for the Leptumon Launcher.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

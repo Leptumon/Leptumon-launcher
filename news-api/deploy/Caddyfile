@@ -1,0 +1,7 @@
+# Used by `docker compose --profile https up -d`. Caddy gets and renews the
+# HTTPS certificate for DOMAIN (from .env) automatically; the domain's DNS
+# record must point at this server and ports 80 and 443 must be open.
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy news:8787
+}

@@ -1,0 +1,121 @@
+name: Release Build
+
+# Publishing a GitHub Release builds every platform and attaches the installers.
+# The launcher's self-updater (launcher/src/main/updater.ts) looks for these
+# exact asset names on the latest release, so keep them in sync:
+#   Leptumon-Launcher-<tag>-win32-x64-setup.exe
+#   Leptumon-Launcher-<tag>-darwin-<x64|arm64>.zip
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: launcher
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run make -- --platform=win32 --arch=x64
+
+      - name: Rename and Upload Windows Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: pwsh
+        run: |
+          $VERSION = "${{ github.event.release.tag_name }}"
+
+          Write-Host "Listing output directory:"
+          Get-ChildItem -Recurse out/make
+
+          $setupFile = Get-ChildItem -Path "out/make/squirrel.windows/x64" -Filter "*Setup.exe" | Select-Object -First 1
+          if ($setupFile) {
+            $newName = "Leptumon-Launcher-$VERSION-win32-x64-setup.exe"
+            Move-Item -Path $setupFile.FullName -Destination $newName
+            gh release upload ${{ github.event.release.tag_name }} $newName
+          } else {
+             Write-Error "Setup.exe not found!"
+          }
+
+          $zipFile = Get-ChildItem -Path "out/make/zip/win32/x64" -Filter "*.zip" | Select-Object -First 1
+          if ($zipFile) {
+            $newName = "Leptumon-Launcher-$VERSION-win32-x64.zip"
+            Move-Item -Path $zipFile.FullName -Destination $newName
+            gh release upload ${{ github.event.release.tag_name }} $newName
+          }
+
+  build-macos:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        arch: [x64, arm64]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run make -- --platform=darwin --arch=${{ matrix.arch }}
+
+      - name: Rename and Upload macOS Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ github.event.release.tag_name }}"
+
+          DMG_FILE=$(find out/make -name "*.dmg" | head -n 1)
+          if [ -n "$DMG_FILE" ]; then
+             mv "$DMG_FILE" "Leptumon-Launcher-${VERSION}-darwin-${{ matrix.arch }}.dmg"
+             gh release upload ${{ github.event.release.tag_name }} "Leptumon-Launcher-${VERSION}-darwin-${{ matrix.arch }}.dmg"
+          fi
+
+          # The zip is what the self-updater installs on macOS.
+          ZIP_FILE=$(find out/make -name "*.zip" | head -n 1)
+          if [ -n "$ZIP_FILE" ]; then
+             mv "$ZIP_FILE" "Leptumon-Launcher-${VERSION}-darwin-${{ matrix.arch }}.zip"
+             gh release upload ${{ github.event.release.tag_name }} "Leptumon-Launcher-${VERSION}-darwin-${{ matrix.arch }}.zip"
+          fi
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: sudo apt-get update && sudo apt-get install -y fakeroot dpkg rpm
+      - run: npm ci
+      - run: npm run make -- --platform=linux --arch=x64
+
+      - name: Rename and Upload Linux Artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ github.event.release.tag_name }}"
+
+          DEB_FILE=$(find out/make -name "*.deb" | head -n 1)
+          if [ -n "$DEB_FILE" ]; then
+             mv "$DEB_FILE" "Leptumon-Launcher-${VERSION}-linux-x64.deb"
+             gh release upload ${{ github.event.release.tag_name }} "Leptumon-Launcher-${VERSION}-linux-x64.deb"
+          fi
+
+          RPM_FILE=$(find out/make -name "*.rpm" | head -n 1)
+          if [ -n "$RPM_FILE" ]; then
+             mv "$RPM_FILE" "Leptumon-Launcher-${VERSION}-linux-x64.rpm"
+             gh release upload ${{ github.event.release.tag_name }} "Leptumon-Launcher-${VERSION}-linux-x64.rpm"
+          fi
+
+          ZIP_FILE=$(find out/make -name "*.zip" | head -n 1)
+          if [ -n "$ZIP_FILE" ]; then
+             mv "$ZIP_FILE" "Leptumon-Launcher-${VERSION}-linux-x64.zip"
+             gh release upload ${{ github.event.release.tag_name }} "Leptumon-Launcher-${VERSION}-linux-x64.zip"
+          fi

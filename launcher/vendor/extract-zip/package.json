@@ -1,0 +1,11 @@
+{
+  "name": "extract-zip",
+  "version": "2.0.1-leptumon.1",
+  "private": true,
+  "description": "Build-time stand-in for extract-zip that forwards to Electron's hardened extractor.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@electron-internal/extract-zip": "^1.0.5"
+  }
+}

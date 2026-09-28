@@ -1,0 +1,203 @@
+@use '../base/mixins';
+@use '../base/variables' as vars;
+
+// Launch card on the home page (components/LaunchButton.tsx): neutral glass,
+// with the accent kept for the Play button.
+.launch-button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    height: 100%;
+    width: 380px;
+    margin-left: auto;
+    border-radius: vars.$radius-2xl;
+    overflow: hidden;
+    background-color: vars.$surface;
+    box-shadow: inset 0 0 0 1px vars.$hairline;
+
+    .launch-info {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .header-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            max-width: calc(100% - 48px);
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+
+            .version-info {
+                font-weight: vars.$weight-semibold;
+                font-size: vars.$text-display;
+                letter-spacing: vars.$tracking-tight;
+            }
+
+            .server-status-pill {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                height: 22px;
+                padding: 0 8px;
+                border-radius: vars.$radius-pill;
+                background-color: vars.$control;
+                box-shadow: inset 0 0 0 1px vars.$hairline;
+
+                .status-dot {
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+
+                    &.online {
+                        background-color: vars.$success;
+                    }
+
+                    &.offline {
+                        background-color: vars.$danger;
+                    }
+                }
+
+                .server-status {
+                    font-size: vars.$text-xs;
+                    font-weight: vars.$weight-medium;
+                    font-variant-numeric: tabular-nums;
+                    color: vars.$text-muted;
+                }
+            }
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 22px;
+            max-width: 100%;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                box-shadow: 0 0 0 1px vars.$hairline;
+            }
+
+            .username {
+                font-size: vars.$text-sm;
+                color: vars.$text-muted;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &.is-error {
+                    color: vars.$danger;
+                }
+            }
+        }
+    }
+
+    .button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: auto;
+        height: 70px;
+        background-color: vars.$accent;
+        cursor: pointer;
+        transition: background-color vars.$duration-fast ease;
+
+        span {
+            font-weight: vars.$weight-semibold;
+            letter-spacing: vars.$tracking-tight;
+            color: vars.$text-on-accent;
+        }
+
+        .button-label {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            padding: 0 20px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 1.2;
+            font-variant-numeric: tabular-nums;
+            transition: font-size vars.$duration-base ease, transform vars.$duration-fast vars.$ease-out;
+
+            // Too long for one line at the minimum size: two balanced lines, clamped.
+            &.is-wrapped {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                white-space: normal;
+                text-wrap: balance;
+            }
+
+            // Off-screen copy used to measure the widest text on one line.
+            // No transition here: measuring mid-animation would read the old size.
+            &--measure {
+                position: absolute;
+                width: auto;
+                visibility: hidden;
+                pointer-events: none;
+                transition: none;
+            }
+        }
+
+        &:hover {
+            background-color: vars.$accent-hover;
+        }
+
+        // The card can't shrink without shifting the layout, so the label sinks instead.
+        &:active {
+            background-color: vars.$accent-pressed;
+
+            span {
+                transform: scale(0.97);
+            }
+        }
+
+        // Installing: click to cancel.
+        &.inactive {
+            background-color: vars.$control;
+
+            &:hover {
+                background-color: vars.$control-hover;
+            }
+
+            span {
+                @include mixins.shimmer-text;
+            }
+        }
+
+        &.stop {
+            background-color: vars.$danger-strong;
+
+            span {
+                color: vars.$text;
+            }
+
+            &:hover {
+                background-color: vars.$danger;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .launch-button .button:active span {
+        transform: none;
+    }
+}

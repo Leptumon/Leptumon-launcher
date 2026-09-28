@@ -1,0 +1,123 @@
+{
+    "login_ms": "Microsoft Hesabı ile Giriş Yap",
+    "auth_successful": "Giriş başarılı!",
+    "auth_successful_desc": "Artık bu pencereyi kapatıp başlatıcıya dönebilirsiniz.",
+    "auth_failed": "Giriş başarısız",
+    "auth_failed_desc": "Bir hata oluştu. Lütfen tekrar deneyin veya sorun devam ederse destek ile iletişime geçin.",
+    "auth_missing_code": "Yetkilendirme kodu eksik.",
+    "auth_invalid_state": "Geçersiz kimlik doğrulama durumu. Lütfen girişi başlatıcıdan yeniden başlatın.",
+    "launching_as": "<username> olarak başlatılıyor",
+    "play": "Oyna",
+    "stop": "Durdur",
+    "home": "Ana Sayfa",
+    "settings": "Ayarlar",
+    "settings_sections": {
+        "game": "Oyun",
+        "launcher": "Başlatıcı",
+        "account": "Hesap"
+    },
+    "memory": {
+        "title": "Bellek",
+        "description": "Oyunun kullanabileceği RAM miktarı. Leptumon en az 6 GB gerektirir.",
+        "recommended": "Önerilen"
+    },
+    "units": {
+        "gb": "<value> GB"
+    },
+    "advanced": {
+        "title": "Gelişmiş",
+        "description": "Deneyimli oyuncular için Java seçenekleri."
+    },
+    "custom_jvm_args": {
+        "title": "Özel JVM argümanları",
+        "description": "Oyun başlarken eklenir, boşlukla ayrılır."
+    },
+    "microsoft_account": "Microsoft hesabı",
+    "log_out": "Çıkış yap",
+    "language": "Dil",
+    "store": "Mağaza",
+    "auto_join": {
+        "title": "Başlangıçta sunucuya katıl",
+        "description": "Oyun yüklenir yüklenmez Leptumon'a bağlanır."
+    },
+    "minimize_on_launch": {
+        "title": "Oynarken küçült",
+        "description": "Oyun başladığında başlatıcıyı gizler."
+    },
+    "server_status": {
+        "checking": "Kontrol ediliyor...",
+        "online": "Çevrimiçi",
+        "offline": "Çevrimdışı"
+    },
+    "news": {
+        "title": "Haberler",
+        "empty": "Henüz haber yok.",
+        "error": "Haberler yüklenemedi.",
+        "retry": "Tekrar dene",
+        "previous": "Önceki haber",
+        "next": "Sonraki haber",
+        "open_link": "Bağlantıyı aç",
+        "close": "Kapat"
+    },
+    "menu": {
+        "edit": "Düzen",
+        "view": "Görüntü"
+    },
+    "update": {
+        "title": "Başlatıcı Güncellemesi",
+        "ready_message": "Leptumon Launcher <version> hazır. Güncellemek için şimdi yeniden başlatılsın mı?",
+        "manual_message": "Leptumon Launcher <version> kullanılabilir. Şimdi indirilsin mi?",
+        "restart": "Yeniden Başlat",
+        "download": "İndir",
+        "later": "Daha Sonra"
+    },
+    "stop_game": {
+        "title": "Oyun durdurulsun mu?",
+        "message": "Oyun şu anda çalışıyor. Durdurmak istiyor musunuz?",
+        "confirm": "Durdur",
+        "cancel": "İptal"
+    },
+    "cancel_launch": {
+        "title": "Başlatma iptal edilsin mi?",
+        "message": "Kurulum devam ediyor. İptal etmek istiyor musunuz?",
+        "confirm": "Evet, İptal Et",
+        "cancel": "Hayır"
+    },
+    "launch": {
+        "initializing": "Oyun oturumu hazırlanıyor...",
+        "modpack_checking": "Mod paketi kontrol ediliyor...",
+        "modpack_downloading_pack": "Mod paketi indiriliyor (%<percent>)",
+        "modpack_resolving": "Mod listesi hazırlanıyor...",
+        "modpack_downloading": "Modlar indiriliyor (<done>/<total>)",
+        "modpack_downloading_files": "Mod paketi dosyaları indiriliyor (<done>/<total>)",
+        "modpack_applying": "Mod paketi dosyaları uygulanıyor...",
+        "modpack_ready": "Mod paketi hazır...",
+        "java_checking": "Java kurulumu kontrol ediliyor...",
+        "java_downloading": "Java çalışma ortamı indiriliyor (%<percent>)",
+        "java_ready": "Java çalışma ortamı hazır...",
+        "loader_installing": "<name> yükleyicisi kuruluyor...",
+        "loader_installed": "<type> yükleyicisi kuruldu...",
+        "downloading_assets": "Oyun kaynakları indiriliyor (%<percent>)",
+        "downloading_libraries": "Oyun kütüphaneleri indiriliyor (%<percent>)",
+        "downloading_client": "Oyun istemcisi indiriliyor (%<percent>)",
+        "downloading_files": "Oyun dosyaları indiriliyor (%<percent>)",
+        "running": "Oyun oturumu başlatılıyor...",
+        "cancelled": "Başlatma iptal edildi...",
+        "error": "Başlatma başarısız: <message>"
+    },
+    "errors": {
+        "no_account": "Hesap seçilmedi",
+        "session_expired": "Oturumun süresi doldu veya geçersiz. Lütfen çıkış yapıp tekrar giriş yapın.",
+        "modpack_not_configured": "Mod paketi sürümü henüz ayarlanmadı. Lütfen daha sonra tekrar kontrol edin!",
+        "modpack_manifest_unreachable": "Leptumon dosya sunucusuna ulaşılamadı. Bağlantınızı kontrol edin ve tekrar denemek için Oyna'ya basın.",
+        "modpack_download_failed": "Mod paketi indirilemedi. Lütfen birazdan tekrar deneyin.",
+        "modpack_unsupported_loader": "Bu mod paketi, başlatıcının desteklemediği bir mod yükleyicisi kullanıyor.",
+        "modpack_blocked_mods": "Bu mod paketindeki <count> mod başlatıcı üzerinden indirmeye izin vermiyor, bu yüzden kurulum tamamlanamıyor. Lütfen Leptumon ekibine bildirin.",
+        "modpack_files_failed": "<count> mod paketi dosyası indirilemedi. Bağlantınızı kontrol edin ve tekrar denemek için Oyna'ya basın.",
+        "microsoft_unavailable_title": "Microsoft Girişi Kullanılamıyor",
+        "microsoft_unavailable_message": "Microsoft girişi başlatılamadı.",
+        "unexpected_title": "Beklenmeyen Hata",
+        "unexpected_error": "Beklenmeyen bir hata oluştu",
+        "unexpected_promise_error": "Beklenmeyen bir eşzamansız hata oluştu"
+    }
+}

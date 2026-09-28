@@ -1,0 +1,123 @@
+{
+    "login_ms": "Se connecter avec Microsoft",
+    "auth_successful": "Connexion réussie !",
+    "auth_successful_desc": "Vous pouvez fermer cette fenêtre et retourner sur le launcher.",
+    "auth_failed": "Échec de la connexion",
+    "auth_failed_desc": "Une erreur est survenue. Réessayez, ou contactez le support si le problème persiste.",
+    "auth_missing_code": "Code d'autorisation manquant.",
+    "auth_invalid_state": "État d'authentification invalide. Relancez la connexion depuis le launcher.",
+    "launching_as": "Jouer en tant que <username>",
+    "play": "Jouer",
+    "stop": "Arrêter",
+    "home": "Accueil",
+    "settings": "Paramètres",
+    "settings_sections": {
+        "game": "Jeu",
+        "launcher": "Launcher",
+        "account": "Compte"
+    },
+    "memory": {
+        "title": "Mémoire",
+        "description": "Quantité de RAM que le jeu peut utiliser. Leptumon a besoin d'au moins 6 Go.",
+        "recommended": "Recommandé"
+    },
+    "units": {
+        "gb": "<value> Go"
+    },
+    "advanced": {
+        "title": "Avancé",
+        "description": "Options Java pour les joueurs expérimentés."
+    },
+    "custom_jvm_args": {
+        "title": "Arguments JVM personnalisés",
+        "description": "Ajoutés au démarrage du jeu, séparés par des espaces."
+    },
+    "microsoft_account": "Compte Microsoft",
+    "log_out": "Se déconnecter",
+    "language": "Langue",
+    "store": "Boutique",
+    "auto_join": {
+        "title": "Rejoindre le serveur au lancement",
+        "description": "Connexion à Leptumon dès que le jeu a fini de charger."
+    },
+    "minimize_on_launch": {
+        "title": "Réduire pendant la partie",
+        "description": "Masque le launcher au démarrage du jeu."
+    },
+    "server_status": {
+        "checking": "Vérification...",
+        "online": "En ligne",
+        "offline": "Hors ligne"
+    },
+    "news": {
+        "title": "Actualités",
+        "empty": "Aucune actualité pour le moment.",
+        "error": "Impossible de charger les actualités.",
+        "retry": "Réessayer",
+        "previous": "Actualité précédente",
+        "next": "Actualité suivante",
+        "open_link": "Ouvrir le lien",
+        "close": "Fermer"
+    },
+    "menu": {
+        "edit": "Édition",
+        "view": "Présentation"
+    },
+    "update": {
+        "title": "Mise à jour du launcher",
+        "ready_message": "Leptumon Launcher <version> est prêt. Redémarrer maintenant pour mettre à jour ?",
+        "manual_message": "Leptumon Launcher <version> est disponible. Le télécharger maintenant ?",
+        "restart": "Redémarrer",
+        "download": "Télécharger",
+        "later": "Plus tard"
+    },
+    "stop_game": {
+        "title": "Arrêter le jeu ?",
+        "message": "Le jeu est en cours d'exécution. Voulez-vous l'arrêter ?",
+        "confirm": "Arrêter",
+        "cancel": "Annuler"
+    },
+    "cancel_launch": {
+        "title": "Annuler le lancement ?",
+        "message": "L'installation est en cours. Voulez-vous l'annuler ?",
+        "confirm": "Oui, annuler",
+        "cancel": "Non"
+    },
+    "launch": {
+        "initializing": "Préparation de votre session de jeu...",
+        "modpack_checking": "Vérification du modpack...",
+        "modpack_downloading_pack": "Téléchargement du modpack (<percent> %)",
+        "modpack_resolving": "Préparation de la liste des mods...",
+        "modpack_downloading": "Téléchargement des mods (<done>/<total>)",
+        "modpack_downloading_files": "Téléchargement des fichiers du modpack (<done>/<total>)",
+        "modpack_applying": "Application des fichiers du modpack...",
+        "modpack_ready": "Le modpack est prêt...",
+        "java_checking": "Vérification de Java...",
+        "java_downloading": "Téléchargement de Java (<percent> %)",
+        "java_ready": "Java est prêt...",
+        "loader_installing": "Installation de <name>...",
+        "loader_installed": "<type> est installé...",
+        "downloading_assets": "Téléchargement des ressources du jeu (<percent> %)",
+        "downloading_libraries": "Téléchargement des bibliothèques (<percent> %)",
+        "downloading_client": "Téléchargement du client (<percent> %)",
+        "downloading_files": "Téléchargement des fichiers du jeu (<percent> %)",
+        "running": "Lancement du jeu...",
+        "cancelled": "Lancement annulé...",
+        "error": "Échec du lancement : <message>"
+    },
+    "errors": {
+        "no_account": "Aucun compte sélectionné",
+        "session_expired": "Session expirée ou invalide. Déconnectez-vous puis reconnectez-vous.",
+        "modpack_not_configured": "La version du modpack n'est pas encore configurée. Revenez bientôt !",
+        "modpack_manifest_unreachable": "Impossible de joindre le serveur de fichiers Leptumon. Vérifiez votre connexion et cliquez sur Jouer pour réessayer.",
+        "modpack_download_failed": "Impossible de télécharger le modpack. Réessayez dans un instant.",
+        "modpack_unsupported_loader": "Ce modpack utilise un mod loader que le launcher ne prend pas en charge.",
+        "modpack_blocked_mods": "<count> mod(s) de ce modpack n'autorisent pas le téléchargement par un launcher, l'installation ne peut donc pas se terminer. Merci de prévenir l'équipe Leptumon.",
+        "modpack_files_failed": "<count> fichier(s) du modpack n'ont pas pu être téléchargés. Vérifiez votre connexion et cliquez sur Jouer pour réessayer.",
+        "microsoft_unavailable_title": "Connexion Microsoft indisponible",
+        "microsoft_unavailable_message": "La connexion Microsoft n'a pas pu démarrer.",
+        "unexpected_title": "Erreur inattendue",
+        "unexpected_error": "Une erreur inattendue est survenue",
+        "unexpected_promise_error": "Une erreur asynchrone inattendue est survenue"
+    }
+}

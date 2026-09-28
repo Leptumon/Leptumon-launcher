@@ -1,0 +1,75 @@
+@use '../base/mixins';
+@use '../base/variables' as vars;
+
+// Install progress shown on other pages (components/MiniProgressPill.tsx).
+.mini-progress-pill {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 200px;
+    width: fit-content;
+    height: 40px;
+    padding: 0 20px;
+    overflow: hidden;
+    border-radius: vars.$radius-pill;
+    background-color: vars.$popover;
+    box-shadow: inset 0 0 0 1px vars.$hairline-strong, vars.$shadow-popover;
+    animation: mini-pill-in vars.$duration-slow vars.$ease-out;
+
+    .pill-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .status-text {
+        font-size: vars.$text-sm;
+        font-weight: vars.$weight-medium;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        @include mixins.shimmer-text;
+    }
+
+    .pill-progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        z-index: 1;
+    }
+
+    .pill-progress-fill {
+        height: 100%;
+        background-color: vars.$accent;
+        transition: width vars.$duration-slow vars.$ease-out;
+    }
+}
+
+@keyframes mini-pill-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mini-progress-pill {
+        animation: none;
+    }
+}

@@ -1,0 +1,144 @@
+@use '../base/variables' as vars;
+
+// Select (components/DropdownMenu.tsx).
+.dropdown-container {
+  position: relative;
+  width: 240px;
+  max-width: 100%;
+  user-select: none;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  height: vars.$control-height;
+  padding: 0 10px 0 12px;
+  border: 0;
+  border-radius: vars.$radius-md;
+  background-color: vars.$control;
+  box-shadow: inset 0 0 0 1px vars.$hairline;
+  color: vars.$text;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color vars.$duration-fast ease,
+    transform vars.$duration-fast vars.$ease-out;
+
+  &:hover {
+    background-color: vars.$control-hover;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &[aria-expanded='true'] {
+    background-color: vars.$control-hover;
+  }
+}
+
+.selected-label {
+  font-size: vars.$text-base;
+  font-weight: vars.$weight-medium;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron-container {
+  display: flex;
+  align-items: center;
+  color: vars.$text-muted;
+  transition: transform vars.$duration-base vars.$ease-out;
+
+  &.is-open {
+    transform: rotate(180deg);
+  }
+}
+
+// Portalled to <body>; position, size and transform origin come from DropdownMenu.tsx.
+.dropdown-panel {
+  position: fixed;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  background-color: vars.$popover;
+  border-radius: vars.$radius-lg;
+  box-shadow: inset 0 0 0 1px vars.$hairline-strong, vars.$shadow-popover;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: vars.$text;
+  user-select: none;
+  // Stay clickable even when it overlaps the draggable titlebar.
+  -webkit-app-region: no-drag;
+}
+
+// Scrolls inside the shell's padding. Positioned so option offsets are measured within it.
+.dropdown-list {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // Keep the thumb clear of the shell's rounded corners at the ends of the track.
+  &::-webkit-scrollbar-track {
+    margin-block: 4px;
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 10px;
+  font-size: vars.$text-base;
+  border-radius: 8px;
+  color: vars.$text-muted;
+  cursor: pointer;
+  transition: background-color vars.$duration-fast ease, color vars.$duration-fast ease;
+
+  &:hover {
+    background-color: vars.$control-hover;
+    color: vars.$text;
+  }
+
+  &.selected {
+    color: vars.$text;
+
+    svg {
+      color: vars.$accent;
+    }
+  }
+
+  .item-label {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.item-icon {
+  display: flex;
+  align-items: center;
+  color: vars.$text-muted;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-header:active {
+    transform: none;
+  }
+}

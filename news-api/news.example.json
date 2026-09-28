@@ -1,0 +1,19 @@
+{
+  "news": [
+    {
+      "id": 2,
+      "title": "Événement Cobblemon ce week-end",
+      "description": "Chasse aux shinies samedi et dimanche de 14 h à 22 h.\n\nLes trois meilleurs chasseurs gagnent un grade exclusif. Rendez-vous au spawn !",
+      "image": "https://example.com/images/evenement.png",
+      "url": "https://discord.com/invite/s5yxVPfJGE",
+      "created_at": "2026-09-19T10:00:00.000Z"
+    },
+    {
+      "id": 1,
+      "title": "Bienvenue sur le launcher Leptumon",
+      "description": "Connectez-vous avec votre compte Microsoft et cliquez sur Jouer : le modpack s'installe et se met à jour tout seul.",
+      "image": "",
+      "created_at": "2026-09-18T18:00:00.000Z"
+    }
+  ]
+}

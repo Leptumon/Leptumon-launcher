@@ -1,0 +1,28 @@
+@use '../base/variables' as vars;
+
+// Install progress under the Play button (components/ProgressBar.tsx).
+.progressBarContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  background-color: vars.$control;
+
+  .progressBarFill {
+    height: 100%;
+    background-color: vars.$accent;
+    transition: width vars.$duration-slow vars.$ease-out;
+  }
+
+  .progressBarLabel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: vars.$text-xs;
+    font-weight: vars.$weight-semibold;
+    color: vars.$text;
+  }
+}

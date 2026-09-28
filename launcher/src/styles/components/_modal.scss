@@ -1,0 +1,64 @@
+@use '../base/variables' as vars;
+
+// Confirm dialogs (components/ConfirmDialog.tsx): opaque popover surface, no bounce.
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: vars.$scrim;
+  animation: overlay-fade-in vars.$duration-base ease-out;
+}
+
+.modal-card {
+  box-sizing: border-box;
+  width: 400px;
+  max-width: calc(100% - 48px);
+  padding: 20px;
+  border-radius: vars.$radius-xl;
+  background-color: vars.$popover;
+  box-shadow: inset 0 0 0 1px vars.$hairline-strong, vars.$shadow-popover;
+  color: vars.$text;
+  animation: modal-in vars.$duration-base vars.$ease-out;
+}
+
+.modal-title {
+  display: block;
+  margin: 0 0 6px;
+  font-size: vars.$text-xl;
+  font-weight: vars.$weight-semibold;
+  letter-spacing: vars.$tracking-tight;
+}
+
+.modal-body p {
+  margin: 0;
+  font-size: vars.$text-base;
+  line-height: 1.5;
+  color: vars.$text-muted;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(4px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal-card {
+    animation: none;
+  }
+}

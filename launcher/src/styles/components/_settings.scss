@@ -1,0 +1,205 @@
+@use '../base/variables' as vars;
+
+// Settings page (views/pages/Settings.tsx, components/SettingsLayout.tsx).
+.settings {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border: 1px solid vars.$hairline;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-radius: vars.$radius-2xl 0 0 0;
+
+    &__inner {
+        box-sizing: border-box;
+        max-width: vars.$settings-max-width;
+        padding: 28px 36px 48px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: vars.$text-2xl;
+        font-weight: vars.$weight-semibold;
+        letter-spacing: vars.$tracking-tight;
+        line-height: 1.2;
+        user-select: none;
+    }
+}
+
+.settings-section {
+    margin-top: 28px;
+
+    &__title {
+        margin: 0 0 10px 2px;
+        font-size: vars.$text-sm;
+        font-weight: vars.$weight-medium;
+        color: vars.$text-muted;
+        user-select: none;
+    }
+}
+
+.settings-card {
+    border-radius: vars.$radius-lg;
+    background-color: vars.$surface;
+    box-shadow: inset 0 0 0 1px vars.$hairline;
+}
+
+.setting-row {
+    position: relative;
+
+    // Inset rule between rows: it stops with the text instead of running into the card's edge.
+    & + &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 16px;
+        right: 16px;
+        height: 1px;
+        background-color: vars.$hairline;
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        box-sizing: border-box;
+        min-height: 60px;
+        padding: 12px 16px;
+    }
+
+    &__leading {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: vars.$text-base;
+        font-weight: vars.$weight-medium;
+        line-height: 20px;
+        color: vars.$text;
+    }
+
+    &__description {
+        margin: 0;
+        font-size: vars.$text-sm;
+        line-height: 18px;
+        color: vars.$text-muted;
+    }
+
+    &__control {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &__body {
+        padding: 0 16px 16px;
+    }
+
+    // The Advanced header is a whole-row button.
+    &__disclosure {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+        border-radius: vars.$radius-lg;
+        transition: background-color vars.$duration-fast ease;
+
+        &:hover {
+            background-color: vars.$row-hover;
+        }
+    }
+
+    &__chevron {
+        display: flex;
+        flex-shrink: 0;
+        color: vars.$text-muted;
+        transition: transform vars.$duration-base vars.$ease-out;
+
+        .is-open & {
+            transform: rotate(180deg);
+        }
+    }
+
+    // Clips the content while its height animates. The body's padding is inside
+    // the measured height, so nothing jumps at the start or end.
+    &__collapse {
+        overflow: hidden;
+    }
+}
+
+.memory-value {
+    font-size: vars.$text-base;
+    font-weight: vars.$weight-semibold;
+    font-variant-numeric: tabular-nums;
+    color: vars.$text;
+}
+
+.language-select {
+    width: 200px;
+}
+
+.account-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px vars.$hairline;
+    user-select: none;
+}
+
+.jvm-args {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__label {
+        font-size: vars.$text-sm;
+        font-weight: vars.$weight-medium;
+        color: vars.$text;
+    }
+
+    &__input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 64px;
+        padding: 10px 12px;
+        resize: vertical;
+        border: 0;
+        border-radius: vars.$radius-md;
+        background-color: vars.$control;
+        box-shadow: inset 0 0 0 1px vars.$hairline;
+        color: vars.$text;
+        font-family: vars.$font-mono;
+        font-size: vars.$text-sm;
+        letter-spacing: 0;
+        line-height: 1.5;
+        outline: none;
+        transition: box-shadow vars.$duration-fast ease, background-color vars.$duration-fast ease;
+
+        &:hover {
+            background-color: vars.$control-hover;
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 1px vars.$accent;
+        }
+    }
+
+    &__hint {
+        font-size: vars.$text-xs;
+        color: vars.$text-dim;
+    }
+}

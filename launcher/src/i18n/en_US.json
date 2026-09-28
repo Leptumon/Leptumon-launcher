@@ -1,0 +1,123 @@
+{
+    "login_ms": "Login with Microsoft Account",
+    "auth_successful": "Authentication Successful!",
+    "auth_successful_desc": "You can now close this window and return to the launcher.",
+    "auth_failed": "Authentication Failed",
+    "auth_failed_desc": "An error occurred. Please try again or contact support if the problem persists.",
+    "auth_missing_code": "Missing authorization code.",
+    "auth_invalid_state": "Invalid authentication state. Please restart login from the launcher.",
+    "launching_as": "Launching as <username>",
+    "play": "Play",
+    "stop": "Stop",
+    "home": "Home",
+    "settings": "Settings",
+    "settings_sections": {
+        "game": "Game",
+        "launcher": "Launcher",
+        "account": "Account"
+    },
+    "memory": {
+        "title": "Memory",
+        "description": "How much RAM the game can use. Leptumon needs at least 6 GB.",
+        "recommended": "Recommended"
+    },
+    "units": {
+        "gb": "<value> GB"
+    },
+    "advanced": {
+        "title": "Advanced",
+        "description": "Java options for experienced players."
+    },
+    "custom_jvm_args": {
+        "title": "Custom JVM arguments",
+        "description": "Added when the game starts, separated by spaces."
+    },
+    "microsoft_account": "Microsoft account",
+    "log_out": "Log out",
+    "language": "Language",
+    "store": "Store",
+    "auto_join": {
+        "title": "Join the server on launch",
+        "description": "Connect to Leptumon as soon as the game has loaded."
+    },
+    "minimize_on_launch": {
+        "title": "Minimize while playing",
+        "description": "Hide the launcher when the game starts."
+    },
+    "server_status": {
+        "checking": "Checking...",
+        "online": "Online",
+        "offline": "Offline"
+    },
+    "news": {
+        "title": "News",
+        "empty": "No news yet.",
+        "error": "Couldn't load the news.",
+        "retry": "Try again",
+        "previous": "Previous article",
+        "next": "Next article",
+        "open_link": "Open link",
+        "close": "Close"
+    },
+    "menu": {
+        "edit": "Edit",
+        "view": "View"
+    },
+    "update": {
+        "title": "Launcher Update",
+        "ready_message": "Leptumon Launcher <version> is ready. Restart now to update?",
+        "manual_message": "Leptumon Launcher <version> is available. Download it now?",
+        "restart": "Restart",
+        "download": "Download",
+        "later": "Later"
+    },
+    "stop_game": {
+        "title": "Stop Game?",
+        "message": "The game is currently running. Do you want to stop it?",
+        "confirm": "Stop",
+        "cancel": "Cancel"
+    },
+    "cancel_launch": {
+        "title": "Cancel Launch?",
+        "message": "Installation is in progress. Do you want to cancel?",
+        "confirm": "Yes, Cancel",
+        "cancel": "No"
+    },
+    "launch": {
+        "initializing": "Preparing your game session...",
+        "modpack_checking": "Checking modpack...",
+        "modpack_downloading_pack": "Downloading modpack (<percent>%)",
+        "modpack_resolving": "Preparing mod list...",
+        "modpack_downloading": "Downloading mods (<done>/<total>)",
+        "modpack_downloading_files": "Downloading modpack files (<done>/<total>)",
+        "modpack_applying": "Applying modpack files...",
+        "modpack_ready": "Modpack is ready...",
+        "java_checking": "Checking Java installation...",
+        "java_downloading": "Downloading Java runtime (<percent>%)",
+        "java_ready": "Java runtime is ready...",
+        "loader_installing": "Installing <name> loader...",
+        "loader_installed": "<type> loader is installed...",
+        "downloading_assets": "Downloading game assets (<percent>%)",
+        "downloading_libraries": "Downloading game libraries (<percent>%)",
+        "downloading_client": "Downloading game client (<percent>%)",
+        "downloading_files": "Downloading game files (<percent>%)",
+        "running": "Launching game session...",
+        "cancelled": "Launch cancelled...",
+        "error": "Launch failed: <message>"
+    },
+    "errors": {
+        "no_account": "No account selected",
+        "session_expired": "Session expired or invalid. Please log out and log in again.",
+        "modpack_not_configured": "The modpack version has not been set up yet. Please check back soon!",
+        "modpack_manifest_unreachable": "Couldn't reach the Leptumon file server. Check your connection and press Play to try again.",
+        "modpack_download_failed": "Could not download the modpack. Please try again in a moment.",
+        "modpack_unsupported_loader": "This modpack uses a mod loader the launcher does not support.",
+        "modpack_blocked_mods": "<count> mod(s) in this modpack don't allow launcher downloads, so setup can't finish. Please let the Leptumon team know.",
+        "modpack_files_failed": "<count> modpack file(s) failed to download. Check your connection and press Play to try again.",
+        "microsoft_unavailable_title": "Microsoft Login Unavailable",
+        "microsoft_unavailable_message": "Microsoft login could not be started.",
+        "unexpected_title": "Unexpected Error",
+        "unexpected_error": "An unexpected error occurred",
+        "unexpected_promise_error": "An unexpected promise error occurred"
+    }
+}

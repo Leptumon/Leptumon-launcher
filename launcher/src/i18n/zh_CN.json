@@ -1,0 +1,123 @@
+{
+    "login_ms": "使用 Microsoft 账户登录",
+    "auth_successful": "验证成功！",
+    "auth_successful_desc": "你现在可以关闭此窗口并返回启动器。",
+    "auth_failed": "验证失败",
+    "auth_failed_desc": "发生错误。请重试，如果问题仍然存在，请联系支持人员。",
+    "auth_missing_code": "缺少授权码。",
+    "auth_invalid_state": "验证状态无效。请从启动器重新登录。",
+    "launching_as": "以 <username> 启动",
+    "play": "开始游戏",
+    "stop": "停止",
+    "home": "主页",
+    "settings": "设置",
+    "settings_sections": {
+        "game": "游戏",
+        "launcher": "启动器",
+        "account": "账户"
+    },
+    "memory": {
+        "title": "内存",
+        "description": "游戏可使用的内存大小。Leptumon 至少需要 6 GB。",
+        "recommended": "推荐"
+    },
+    "units": {
+        "gb": "<value> GB"
+    },
+    "advanced": {
+        "title": "高级",
+        "description": "供有经验的玩家使用的 Java 选项。"
+    },
+    "custom_jvm_args": {
+        "title": "自定义 JVM 参数",
+        "description": "在游戏启动时添加，用空格分隔。"
+    },
+    "microsoft_account": "Microsoft 账户",
+    "log_out": "退出登录",
+    "language": "语言",
+    "store": "商店",
+    "auto_join": {
+        "title": "启动时加入服务器",
+        "description": "游戏加载完成后立即连接到 Leptumon。"
+    },
+    "minimize_on_launch": {
+        "title": "游戏时最小化",
+        "description": "游戏启动时隐藏启动器。"
+    },
+    "server_status": {
+        "checking": "检查中...",
+        "online": "在线",
+        "offline": "离线"
+    },
+    "news": {
+        "title": "新闻",
+        "empty": "暂无新闻。",
+        "error": "无法加载新闻。",
+        "retry": "重试",
+        "previous": "上一条新闻",
+        "next": "下一条新闻",
+        "open_link": "打开链接",
+        "close": "关闭"
+    },
+    "menu": {
+        "edit": "编辑",
+        "view": "显示"
+    },
+    "update": {
+        "title": "启动器更新",
+        "ready_message": "Leptumon Launcher <version> 已就绪。立即重启以完成更新？",
+        "manual_message": "Leptumon Launcher <version> 已发布。立即下载？",
+        "restart": "重启",
+        "download": "下载",
+        "later": "稍后"
+    },
+    "stop_game": {
+        "title": "停止游戏？",
+        "message": "游戏正在运行。要停止吗？",
+        "confirm": "停止",
+        "cancel": "取消"
+    },
+    "cancel_launch": {
+        "title": "取消启动？",
+        "message": "正在安装。要取消吗？",
+        "confirm": "是，取消",
+        "cancel": "否"
+    },
+    "launch": {
+        "initializing": "正在准备游戏会话...",
+        "modpack_checking": "正在检查整合包...",
+        "modpack_downloading_pack": "正在下载整合包 (<percent>%)",
+        "modpack_resolving": "正在准备模组列表...",
+        "modpack_downloading": "正在下载模组 (<done>/<total>)",
+        "modpack_downloading_files": "正在下载整合包文件 (<done>/<total>)",
+        "modpack_applying": "正在应用整合包文件...",
+        "modpack_ready": "整合包已就绪...",
+        "java_checking": "正在检查 Java 安装...",
+        "java_downloading": "正在下载 Java 运行时 (<percent>%)",
+        "java_ready": "Java 运行时已就绪...",
+        "loader_installing": "正在安装 <name> 加载器...",
+        "loader_installed": "<type> 加载器已安装...",
+        "downloading_assets": "正在下载游戏资源 (<percent>%)",
+        "downloading_libraries": "正在下载游戏库 (<percent>%)",
+        "downloading_client": "正在下载游戏客户端 (<percent>%)",
+        "downloading_files": "正在下载游戏文件 (<percent>%)",
+        "running": "正在启动游戏会话...",
+        "cancelled": "启动已取消...",
+        "error": "启动失败：<message>"
+    },
+    "errors": {
+        "no_account": "未选择账户",
+        "session_expired": "会话已过期或无效。请退出登录后重新登录。",
+        "modpack_not_configured": "整合包版本尚未设置。请稍后再来看看！",
+        "modpack_manifest_unreachable": "无法连接到 Leptumon 文件服务器。请检查网络连接，然后点击“开始游戏”重试。",
+        "modpack_download_failed": "无法下载整合包。请稍后重试。",
+        "modpack_unsupported_loader": "此整合包使用了启动器不支持的模组加载器。",
+        "modpack_blocked_mods": "此整合包中有 <count> 个模组不允许通过启动器下载，因此无法完成安装。请告知 Leptumon 团队。",
+        "modpack_files_failed": "有 <count> 个整合包文件下载失败。请检查网络连接，然后点击“开始游戏”重试。",
+        "microsoft_unavailable_title": "Microsoft 登录不可用",
+        "microsoft_unavailable_message": "无法启动 Microsoft 登录。",
+        "unexpected_title": "意外错误",
+        "unexpected_error": "发生意外错误",
+        "unexpected_promise_error": "发生意外的异步错误"
+    }
+}

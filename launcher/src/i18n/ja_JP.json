@@ -1,0 +1,123 @@
+{
+    "login_ms": "Microsoftアカウントでログイン",
+    "auth_successful": "認証に成功しました！",
+    "auth_successful_desc": "このウィンドウを閉じて、ランチャーに戻ってください。",
+    "auth_failed": "認証に失敗しました",
+    "auth_failed_desc": "エラーが発生しました。もう一度お試しいただき、問題が解決しない場合はサポートにお問い合わせください。",
+    "auth_missing_code": "認証コードがありません。",
+    "auth_invalid_state": "認証状態が無効です。ランチャーからもう一度ログインしてください。",
+    "launching_as": "<username> として起動",
+    "play": "プレイ",
+    "stop": "停止",
+    "home": "ホーム",
+    "settings": "設定",
+    "settings_sections": {
+        "game": "ゲーム",
+        "launcher": "ランチャー",
+        "account": "アカウント"
+    },
+    "memory": {
+        "title": "メモリ",
+        "description": "ゲームが使用できるRAMの量です。Leptumonには6 GB以上が必要です。",
+        "recommended": "推奨"
+    },
+    "units": {
+        "gb": "<value> GB"
+    },
+    "advanced": {
+        "title": "詳細設定",
+        "description": "上級者向けのJavaオプションです。"
+    },
+    "custom_jvm_args": {
+        "title": "カスタムJVM引数",
+        "description": "ゲーム起動時に追加されます。スペースで区切ってください。"
+    },
+    "microsoft_account": "Microsoftアカウント",
+    "log_out": "ログアウト",
+    "language": "言語",
+    "store": "ストア",
+    "auto_join": {
+        "title": "起動時にサーバーへ参加",
+        "description": "ゲームの読み込みが終わるとすぐにLeptumonへ接続します。"
+    },
+    "minimize_on_launch": {
+        "title": "プレイ中は最小化",
+        "description": "ゲームの起動時にランチャーを隠します。"
+    },
+    "server_status": {
+        "checking": "確認中...",
+        "online": "オンライン",
+        "offline": "オフライン"
+    },
+    "news": {
+        "title": "ニュース",
+        "empty": "まだニュースはありません。",
+        "error": "ニュースを読み込めませんでした。",
+        "retry": "再試行",
+        "previous": "前のニュース",
+        "next": "次のニュース",
+        "open_link": "リンクを開く",
+        "close": "閉じる"
+    },
+    "menu": {
+        "edit": "編集",
+        "view": "表示"
+    },
+    "update": {
+        "title": "ランチャーのアップデート",
+        "ready_message": "Leptumon Launcher <version> の準備ができました。今すぐ再起動して更新しますか？",
+        "manual_message": "Leptumon Launcher <version> が利用可能です。今すぐダウンロードしますか？",
+        "restart": "再起動",
+        "download": "ダウンロード",
+        "later": "後で"
+    },
+    "stop_game": {
+        "title": "ゲームを停止しますか？",
+        "message": "ゲームは現在実行中です。停止しますか？",
+        "confirm": "停止",
+        "cancel": "キャンセル"
+    },
+    "cancel_launch": {
+        "title": "起動をキャンセルしますか？",
+        "message": "インストール中です。キャンセルしますか？",
+        "confirm": "はい、キャンセルします",
+        "cancel": "いいえ"
+    },
+    "launch": {
+        "initializing": "ゲームセッションを準備中...",
+        "modpack_checking": "Modパックを確認中...",
+        "modpack_downloading_pack": "Modパックをダウンロード中 (<percent>%)",
+        "modpack_resolving": "Modリストを準備中...",
+        "modpack_downloading": "Modをダウンロード中 (<done>/<total>)",
+        "modpack_downloading_files": "Modパックのファイルをダウンロード中 (<done>/<total>)",
+        "modpack_applying": "Modパックのファイルを適用中...",
+        "modpack_ready": "Modパックの準備ができました...",
+        "java_checking": "Javaのインストールを確認中...",
+        "java_downloading": "Javaランタイムをダウンロード中 (<percent>%)",
+        "java_ready": "Javaランタイムの準備ができました...",
+        "loader_installing": "<name> ローダーをインストール中...",
+        "loader_installed": "<type> ローダーをインストールしました...",
+        "downloading_assets": "ゲームアセットをダウンロード中 (<percent>%)",
+        "downloading_libraries": "ゲームライブラリをダウンロード中 (<percent>%)",
+        "downloading_client": "ゲームクライアントをダウンロード中 (<percent>%)",
+        "downloading_files": "ゲームファイルをダウンロード中 (<percent>%)",
+        "running": "ゲームセッションを起動中...",
+        "cancelled": "起動がキャンセルされました...",
+        "error": "起動に失敗しました: <message>"
+    },
+    "errors": {
+        "no_account": "アカウントが選択されていません",
+        "session_expired": "セッションの有効期限が切れているか無効です。ログアウトしてから再度ログインしてください。",
+        "modpack_not_configured": "Modパックのバージョンはまだ設定されていません。しばらくしてからもう一度ご確認ください。",
+        "modpack_manifest_unreachable": "Leptumonのファイルサーバーに接続できませんでした。接続を確認し、「プレイ」を押してもう一度お試しください。",
+        "modpack_download_failed": "Modパックをダウンロードできませんでした。しばらくしてからもう一度お試しください。",
+        "modpack_unsupported_loader": "このModパックは、ランチャーが対応していないModローダーを使用しています。",
+        "modpack_blocked_mods": "このModパックの <count> 個のModはランチャーからのダウンロードを許可していないため、セットアップを完了できません。Leptumonチームにお知らせください。",
+        "modpack_files_failed": "<count> 個のModパックファイルをダウンロードできませんでした。接続を確認し、「プレイ」を押してもう一度お試しください。",
+        "microsoft_unavailable_title": "Microsoftログインを利用できません",
+        "microsoft_unavailable_message": "Microsoftログインを開始できませんでした。",
+        "unexpected_title": "予期しないエラー",
+        "unexpected_error": "予期しないエラーが発生しました",
+        "unexpected_promise_error": "予期しない非同期エラーが発生しました"
+    }
+}

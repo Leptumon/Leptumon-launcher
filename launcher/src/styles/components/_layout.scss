@@ -1,0 +1,13 @@
+@use '../base/variables' as vars;
+
+.layout {
+    box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - vars.$sidebar-width);
+    height: calc(100% - vars.$titlebar-height);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}

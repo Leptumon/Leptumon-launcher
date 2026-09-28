@@ -1,0 +1,17 @@
+node_modules
+.webpack
+out
+pack-dist
+.DS_Store
+.vscode
+*.log
+
+# Database and Environment
+database.db
+database.db-journal
+database.db-wal
+.env
+pack-work
+
+# News API data (articles and uploaded images)
+news-api/data

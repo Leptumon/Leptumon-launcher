@@ -1,0 +1,20 @@
+@use '../base/variables' as vars;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: vars.$footer-height;
+    box-sizing: border-box;
+    padding-right: 70px;
+    
+    .footer-content {
+        display: flex;
+        gap: 16px;
+        height: calc(100% - 70px);
+        width: 100%;
+        align-items: center;
+    }
+}

@@ -1,0 +1,102 @@
+@use '../base/variables' as vars;
+
+// Left navigation (components/Sidebar.tsx, SocialMediaLinks.tsx).
+.sidebar {
+    box-sizing: border-box;
+    position: relative;
+    height: calc(100% - vars.$titlebar-height);
+    width: vars.$sidebar-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0 20px;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+
+        &--bottom {
+            margin-top: auto;
+            gap: 14px;
+        }
+    }
+
+    &__divider {
+        width: 20px;
+        height: 1px;
+        margin: 6px 0;
+        background-color: vars.$hairline-strong;
+    }
+
+    &__avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px vars.$hairline;
+        user-select: none;
+    }
+}
+
+.sidebar-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: vars.$text-muted;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    transition:
+        color vars.$duration-fast ease,
+        background-color vars.$duration-fast ease,
+        transform vars.$duration-fast vars.$ease-out;
+
+    &:hover {
+        color: vars.$text;
+        background-color: vars.$control;
+    }
+
+    &:active {
+        transform: scale(0.94);
+    }
+
+    &.is-active {
+        color: vars.$text;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    // Slides between Home and Settings (motion layoutId).
+    &__marker {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-color: vars.$control-active;
+        box-shadow: inset 0 0 0 1px vars.$hairline;
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-item:active {
+        transform: none;
+    }
+}

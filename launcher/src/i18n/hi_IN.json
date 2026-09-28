@@ -1,0 +1,123 @@
+{
+    "login_ms": "Microsoft खाते से लॉग इन करें",
+    "auth_successful": "प्रमाणीकरण सफल!",
+    "auth_successful_desc": "अब आप इस विंडो को बंद करके लॉन्चर पर लौट सकते हैं।",
+    "auth_failed": "प्रमाणीकरण विफल",
+    "auth_failed_desc": "एक त्रुटि हुई। कृपया फिर से प्रयास करें या समस्या बनी रहने पर सहायता से संपर्क करें।",
+    "auth_missing_code": "प्राधिकरण कोड मौजूद नहीं है।",
+    "auth_invalid_state": "प्रमाणीकरण स्थिति अमान्य है। कृपया लॉन्चर से फिर से लॉग इन करें।",
+    "launching_as": "<username> के रूप में लॉन्च हो रहा है",
+    "play": "खेलें",
+    "stop": "रोकें",
+    "home": "होम",
+    "settings": "सेटिंग्स",
+    "settings_sections": {
+        "game": "गेम",
+        "launcher": "लॉन्चर",
+        "account": "खाता"
+    },
+    "memory": {
+        "title": "मेमोरी",
+        "description": "गेम कितनी RAM इस्तेमाल कर सकता है। Leptumon को कम से कम 6 GB चाहिए।",
+        "recommended": "सुझाया गया"
+    },
+    "units": {
+        "gb": "<value> GB"
+    },
+    "advanced": {
+        "title": "उन्नत",
+        "description": "अनुभवी खिलाड़ियों के लिए Java विकल्प।"
+    },
+    "custom_jvm_args": {
+        "title": "कस्टम JVM आर्ग्युमेंट",
+        "description": "गेम शुरू होने पर जोड़े जाते हैं, स्पेस से अलग करें।"
+    },
+    "microsoft_account": "Microsoft खाता",
+    "log_out": "लॉग आउट",
+    "language": "भाषा",
+    "store": "स्टोर",
+    "auto_join": {
+        "title": "शुरू होते ही सर्वर से जुड़ें",
+        "description": "गेम लोड होते ही Leptumon से कनेक्ट करता है।"
+    },
+    "minimize_on_launch": {
+        "title": "खेलते समय छोटा करें",
+        "description": "गेम शुरू होने पर लॉन्चर को छिपा देता है।"
+    },
+    "server_status": {
+        "checking": "जाँच हो रही है...",
+        "online": "ऑनलाइन",
+        "offline": "ऑफ़लाइन"
+    },
+    "news": {
+        "title": "समाचार",
+        "empty": "अभी कोई समाचार नहीं है।",
+        "error": "समाचार लोड नहीं हो सके।",
+        "retry": "फिर से कोशिश करें",
+        "previous": "पिछला समाचार",
+        "next": "अगला समाचार",
+        "open_link": "लिंक खोलें",
+        "close": "बंद करें"
+    },
+    "menu": {
+        "edit": "संपादन",
+        "view": "दृश्य"
+    },
+    "update": {
+        "title": "लॉन्चर अपडेट",
+        "ready_message": "Leptumon Launcher <version> तैयार है। अपडेट करने के लिए अभी पुनः आरंभ करें?",
+        "manual_message": "Leptumon Launcher <version> उपलब्ध है। अभी डाउनलोड करें?",
+        "restart": "पुनः आरंभ करें",
+        "download": "डाउनलोड करें",
+        "later": "बाद में"
+    },
+    "stop_game": {
+        "title": "गेम रोकें?",
+        "message": "गेम अभी चल रहा है। क्या आप इसे रोकना चाहते हैं?",
+        "confirm": "रोकें",
+        "cancel": "रद्द करें"
+    },
+    "cancel_launch": {
+        "title": "लॉन्च रद्द करें?",
+        "message": "इंस्टॉलेशन जारी है। क्या आप इसे रद्द करना चाहते हैं?",
+        "confirm": "हाँ, रद्द करें",
+        "cancel": "नहीं"
+    },
+    "launch": {
+        "initializing": "गेम सत्र तैयार हो रहा है...",
+        "modpack_checking": "मॉडपैक की जाँच हो रही है...",
+        "modpack_downloading_pack": "मॉडपैक डाउनलोड हो रहा है (<percent>%)",
+        "modpack_resolving": "मॉड सूची तैयार हो रही है...",
+        "modpack_downloading": "मॉड डाउनलोड हो रहे हैं (<done>/<total>)",
+        "modpack_downloading_files": "मॉडपैक फ़ाइलें डाउनलोड हो रही हैं (<done>/<total>)",
+        "modpack_applying": "मॉडपैक फ़ाइलें लागू हो रही हैं...",
+        "modpack_ready": "मॉडपैक तैयार है...",
+        "java_checking": "Java इंस्टॉलेशन की जाँच हो रही है...",
+        "java_downloading": "Java रनटाइम डाउनलोड हो रहा है (<percent>%)",
+        "java_ready": "Java रनटाइम तैयार है...",
+        "loader_installing": "<name> लोडर इंस्टॉल हो रहा है...",
+        "loader_installed": "<type> लोडर इंस्टॉल हो गया...",
+        "downloading_assets": "गेम एसेट डाउनलोड हो रहे हैं (<percent>%)",
+        "downloading_libraries": "गेम लाइब्रेरी डाउनलोड हो रही हैं (<percent>%)",
+        "downloading_client": "गेम क्लाइंट डाउनलोड हो रहा है (<percent>%)",
+        "downloading_files": "गेम फ़ाइलें डाउनलोड हो रही हैं (<percent>%)",
+        "running": "गेम सत्र शुरू हो रहा है...",
+        "cancelled": "लॉन्च रद्द किया गया...",
+        "error": "लॉन्च विफल: <message>"
+    },
+    "errors": {
+        "no_account": "कोई खाता चयनित नहीं है",
+        "session_expired": "सत्र समाप्त हो गया है या अमान्य है। कृपया लॉग आउट करके फिर से लॉग इन करें।",
+        "modpack_not_configured": "मॉडपैक संस्करण अभी सेट नहीं किया गया है। कृपया जल्द ही फिर से देखें!",
+        "modpack_manifest_unreachable": "Leptumon फ़ाइल सर्वर से कनेक्ट नहीं हो सका। अपना कनेक्शन जाँचें और फिर से प्रयास करने के लिए खेलें दबाएँ।",
+        "modpack_download_failed": "मॉडपैक डाउनलोड नहीं हो सका। कृपया थोड़ी देर बाद फिर से प्रयास करें।",
+        "modpack_unsupported_loader": "यह मॉडपैक ऐसे मॉड लोडर का उपयोग करता है जिसे लॉन्चर सपोर्ट नहीं करता।",
+        "modpack_blocked_mods": "इस मॉडपैक के <count> मॉड लॉन्चर से डाउनलोड की अनुमति नहीं देते, इसलिए सेटअप पूरा नहीं हो सकता। कृपया Leptumon टीम को बताएँ।",
+        "modpack_files_failed": "<count> मॉडपैक फ़ाइलें डाउनलोड नहीं हो सकीं। अपना कनेक्शन जाँचें और फिर से प्रयास करने के लिए खेलें दबाएँ।",
+        "microsoft_unavailable_title": "Microsoft लॉग इन उपलब्ध नहीं है",
+        "microsoft_unavailable_message": "Microsoft लॉग इन शुरू नहीं हो सका।",
+        "unexpected_title": "अप्रत्याशित त्रुटि",
+        "unexpected_error": "एक अप्रत्याशित त्रुटि हुई",
+        "unexpected_promise_error": "एक अप्रत्याशित एसिंक्रोनस त्रुटि हुई"
+    }
+}

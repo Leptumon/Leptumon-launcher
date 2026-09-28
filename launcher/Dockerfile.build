@@ -1,0 +1,18 @@
+FROM node:22-bookworm
+
+# Install Linux packaging tools and build dependencies for native modules
+RUN apt-get update && apt-get install -y \
+    fakeroot \
+    dpkg \
+    rpm \
+    zip \
+    build-essential \
+    python3 \
+    libsecret-1-dev \
+    libglib2.0-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Default command to build for Linux x64
+CMD ["npm", "run", "make", "--", "--platform=linux", "--arch=x64"]

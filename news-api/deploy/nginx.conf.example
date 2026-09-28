@@ -1,0 +1,43 @@
+# Two ways to put the news API behind an nginx you already run. Pick one.
+# (No web server on the machine yet? `docker compose --profile https up -d` is simpler.)
+# In both cases keep TRUST_PROXY=1 and set PUBLIC_URL in .env.
+
+# ---------------------------------------------------------------------------
+# A) Under a path of a site you already have, e.g. https://example.com/news/
+#    PUBLIC_URL=https://example.com/news
+#    Launcher news.url: https://example.com/news/v1/public/news
+#    Admin panel:       https://example.com/news/admin/
+# ---------------------------------------------------------------------------
+location /news/ {
+    proxy_pass http://127.0.0.1:8787/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Prefix /news;
+    client_max_body_size 6m;
+}
+
+# ---------------------------------------------------------------------------
+# B) On its own (sub)domain, e.g. https://news.example.com
+#    PUBLIC_URL=https://news.example.com
+#    Launcher news.url: https://news.example.com/v1/public/news
+#    Admin panel:       https://news.example.com/admin/
+# ---------------------------------------------------------------------------
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name news.example.com;
+
+    ssl_certificate     /etc/ssl/news.example.com/fullchain.pem;
+    ssl_certificate_key /etc/ssl/news.example.com/privkey.pem;
+
+    client_max_body_size 6m;
+
+    location / {
+        proxy_pass http://127.0.0.1:8787;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "login_ms": "Войти через учётную запись Microsoft",
+    "auth_successful": "Вход выполнен успешно!",
+    "auth_successful_desc": "Теперь вы можете закрыть это окно и вернуться в лаунчер.",
+    "auth_failed": "Ошибка входа",
+    "auth_failed_desc": "Произошла ошибка. Попробуйте ещё раз или обратитесь в поддержку, если проблема не исчезнет.",
+    "auth_missing_code": "Отсутствует код авторизации.",
+    "auth_invalid_state": "Неверное состояние авторизации. Начните вход заново из лаунчера.",
+    "launching_as": "Запуск от имени <username>",
+    "play": "Играть",
+    "stop": "Остановить",
+    "home": "Главная",
+    "settings": "Настройки",
+    "settings_sections": {
+        "game": "Игра",
+        "launcher": "Лаунчер",
+        "account": "Аккаунт"
+    },
+    "memory": {
+        "title": "Память",
+        "description": "Сколько оперативной памяти может использовать игра. Для Leptumon нужно не менее 6 ГБ.",
+        "recommended": "Рекомендуется"
+    },
+    "units": {
+        "gb": "<value> ГБ"
+    },
+    "advanced": {
+        "title": "Дополнительно",
+        "description": "Параметры Java для опытных игроков."
+    },
+    "custom_jvm_args": {
+        "title": "Пользовательские аргументы JVM",
+        "description": "Добавляются при запуске игры, через пробел."
+    },
+    "microsoft_account": "Аккаунт Microsoft",
+    "log_out": "Выйти",
+    "language": "Язык",
+    "store": "Магазин",
+    "auto_join": {
+        "title": "Подключаться к серверу при запуске",
+        "description": "Подключение к Leptumon сразу после загрузки игры."
+    },
+    "minimize_on_launch": {
+        "title": "Сворачивать во время игры",
+        "description": "Скрывает лаунчер при запуске игры."
+    },
+    "server_status": {
+        "checking": "Проверка...",
+        "online": "В сети",
+        "offline": "Не в сети"
+    },
+    "news": {
+        "title": "Новости",
+        "empty": "Новостей пока нет.",
+        "error": "Не удалось загрузить новости.",
+        "retry": "Повторить",
+        "previous": "Предыдущая новость",
+        "next": "Следующая новость",
+        "open_link": "Открыть ссылку",
+        "close": "Закрыть"
+    },
+    "menu": {
+        "edit": "Правка",
+        "view": "Вид"
+    },
+    "update": {
+        "title": "Обновление лаунчера",
+        "ready_message": "Leptumon Launcher <version> готов. Перезапустить сейчас, чтобы обновить?",
+        "manual_message": "Доступен Leptumon Launcher <version>. Скачать сейчас?",
+        "restart": "Перезапустить",
+        "download": "Скачать",
+        "later": "Позже"
+    },
+    "stop_game": {
+        "title": "Остановить игру?",
+        "message": "Игра сейчас запущена. Остановить её?",
+        "confirm": "Остановить",
+        "cancel": "Отмена"
+    },
+    "cancel_launch": {
+        "title": "Отменить запуск?",
+        "message": "Идёт установка. Отменить её?",
+        "confirm": "Да, отменить",
+        "cancel": "Нет"
+    },
+    "launch": {
+        "initializing": "Подготовка игровой сессии...",
+        "modpack_checking": "Проверка сборки...",
+        "modpack_downloading_pack": "Загрузка сборки (<percent>%)",
+        "modpack_resolving": "Подготовка списка модов...",
+        "modpack_downloading": "Загрузка модов (<done>/<total>)",
+        "modpack_downloading_files": "Загрузка файлов сборки (<done>/<total>)",
+        "modpack_applying": "Применение файлов сборки...",
+        "modpack_ready": "Сборка готова...",
+        "java_checking": "Проверка установки Java...",
+        "java_downloading": "Загрузка среды Java (<percent>%)",
+        "java_ready": "Среда Java готова...",
+        "loader_installing": "Установка загрузчика <name>...",
+        "loader_installed": "Загрузчик <type> установлен...",
+        "downloading_assets": "Загрузка ресурсов игры (<percent>%)",
+        "downloading_libraries": "Загрузка библиотек игры (<percent>%)",
+        "downloading_client": "Загрузка клиента игры (<percent>%)",
+        "downloading_files": "Загрузка файлов игры (<percent>%)",
+        "running": "Запуск игровой сессии...",
+        "cancelled": "Запуск отменён...",
+        "error": "Не удалось запустить: <message>"
+    },
+    "errors": {
+        "no_account": "Аккаунт не выбран",
+        "session_expired": "Сессия истекла или недействительна. Выйдите и войдите снова.",
+        "modpack_not_configured": "Версия сборки ещё не настроена. Загляните позже!",
+        "modpack_manifest_unreachable": "Не удаётся подключиться к файловому серверу Leptumon. Проверьте подключение и нажмите «Играть», чтобы повторить попытку.",
+        "modpack_download_failed": "Не удалось загрузить сборку. Повторите попытку чуть позже.",
+        "modpack_unsupported_loader": "Эта сборка использует загрузчик модов, который лаунчер не поддерживает.",
+        "modpack_blocked_mods": "Модов в сборке, запрещающих загрузку через лаунчеры: <count>. Установку нельзя завершить. Сообщите об этом команде Leptumon.",
+        "modpack_files_failed": "Не удалось загрузить файлов сборки: <count>. Проверьте подключение и нажмите «Играть», чтобы повторить попытку.",
+        "microsoft_unavailable_title": "Вход через Microsoft недоступен",
+        "microsoft_unavailable_message": "Не удалось начать вход через Microsoft.",
+        "unexpected_title": "Непредвиденная ошибка",
+        "unexpected_error": "Произошла непредвиденная ошибка",
+        "unexpected_promise_error": "Произошла непредвиденная асинхронная ошибка"
+    }
+}

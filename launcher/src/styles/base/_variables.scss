@@ -1,0 +1,123 @@
+// ============================================================================
+// Design tokens: the only place colours, radii, type and motion are defined.
+//
+// Surfaces are neutral glass over the blurred artwork. The accent (Leptumon's
+// pastel orange) is reserved for meaning: the Play button, checked and
+// selected states, and keyboard focus. Destructive actions are tinted, not
+// slabbed: a translucent wash of the hue behind text in that same hue.
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// Layout
+// ----------------------------------------------------------------------------
+$titlebar-height: 40px;
+$sidebar-width: 70px;
+$footer-height: 250px;
+$control-height: 36px;
+$settings-max-width: 760px; // includes the page padding
+
+// ----------------------------------------------------------------------------
+// Radius
+// ----------------------------------------------------------------------------
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+$radius-xl: 18px;
+$radius-2xl: 24px; // page panels: hero, launch card, settings frame
+$radius-pill: 999px;
+// Window corners on Windows and Linux (macOS draws its own). Square when maximized.
+$radius-window: 16px;
+
+// ----------------------------------------------------------------------------
+// Typography (Inter 4.1 is bundled, see styles/main.scss)
+// ----------------------------------------------------------------------------
+$font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+$font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+
+$text-xs: 12px;
+$text-sm: 13px;
+$text-base: 14px;
+$text-lg: 16px;
+$text-xl: 18px;
+$text-2xl: 24px;
+$text-display: 32px;
+
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+
+$tracking-tight: -0.02em; // headings
+$tracking-snug: -0.01em; // labels and body
+
+// ----------------------------------------------------------------------------
+// Ink (text and icons), never pure white
+// ----------------------------------------------------------------------------
+$text: hsl(0deg 0% 93%);
+$text-muted: hsl(0deg 0% 66%);
+$text-dim: hsl(0deg 0% 48%);
+
+// ----------------------------------------------------------------------------
+// Surfaces
+// ----------------------------------------------------------------------------
+// Dark wash over the blurred background image behind the whole app.
+$backdrop: hsla(0deg, 0%, 6%, 0.74);
+// Cards and panels sitting on the backdrop.
+$surface: rgba(255, 255, 255, 0.045);
+// Inputs, selects, chips, secondary buttons.
+$control: rgba(255, 255, 255, 0.06);
+$control-hover: rgba(255, 255, 255, 0.09);
+$control-active: rgba(255, 255, 255, 0.13);
+// Menus and dialogs float above everything, so they are opaque: text behind a
+// see-through popover bleeds into its labels.
+$popover: hsl(0deg 0% 11%);
+
+// Dims the app behind a dialog.
+$scrim: rgba(0, 0, 0, 0.45);
+
+// Barely-there hover for large clickable areas (a whole settings row).
+$row-hover: rgba(255, 255, 255, 0.025);
+
+$hairline: rgba(255, 255, 255, 0.09);
+$hairline-strong: rgba(255, 255, 255, 0.15);
+
+// A tight contact shadow plus a soft ambient one, the way macOS elevates menus.
+$shadow-popover: 0 3px 10px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.4);
+
+// Shimmering in-progress text.
+$shimmer-dim: rgba(255, 255, 255, 0.5);
+$shimmer-bright: rgba(255, 255, 255, 1);
+
+// Switch and slider thumbs.
+$knob: #fff;
+$shadow-knob: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+// ----------------------------------------------------------------------------
+// Accent
+// ----------------------------------------------------------------------------
+$accent: hsl(27deg 85% 68%);
+$accent-hover: hsl(27deg 88% 73%);
+$accent-pressed: hsl(27deg 78% 62%);
+$accent-soft: hsla(27deg, 85%, 68%, 0.14);
+$accent-soft-hover: hsla(27deg, 85%, 68%, 0.22);
+$accent-line: hsla(27deg, 85%, 68%, 0.35);
+$accent-text-muted: hsla(27deg, 85%, 68%, 0.75);
+$text-on-accent: hsl(27deg 45% 11%);
+$focus-ring: hsla(27deg, 85%, 68%, 0.6);
+
+// ----------------------------------------------------------------------------
+// Semantic
+// ----------------------------------------------------------------------------
+$danger: hsl(355deg 82% 67%);
+$danger-strong: hsl(355deg 72% 56%);
+$danger-soft: hsla(355deg, 82%, 67%, 0.14);
+$danger-soft-hover: hsla(355deg, 82%, 67%, 0.22);
+$success: hsl(135deg 49% 49%);
+
+// ----------------------------------------------------------------------------
+// Motion (mirrored for the motion package in constants/motion.ts)
+// ----------------------------------------------------------------------------
+$ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+$duration-fast: 120ms;
+$duration-base: 180ms;
+$duration-slow: 280ms;

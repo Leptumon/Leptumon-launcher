@@ -1,0 +1,63 @@
+@use '../base/variables' as vars;
+
+.content {
+    user-select: none;
+    -webkit-user-drag: none;
+    border-radius: vars.$radius-2xl;
+    width: calc(100% - 70px);
+    height: calc(100% - vars.$footer-height);
+    max-width: 100%;
+    max-height: calc(100% - vars.$footer-height);
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid vars.$hairline;
+
+    .content-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .image-container {
+            position: absolute;
+            height: 50%;
+            aspect-ratio: 1 / 1;
+            z-index: 2;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            img {
+                position: absolute;
+                height: 100%;
+                aspect-ratio: 1 / 1;
+                z-index: 3;
+
+                &.glow {
+                    z-index: 2;
+                    filter: blur(50px);
+                }
+
+                &.logo-blur {
+                    z-index: 1;
+                    filter: brightness(0) saturate(0) blur(50px);
+                }
+            }
+        }
+
+        .bg-image {
+            z-index: 1;
+            position: relative;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            transition: all .7s ease;
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+    }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Leptumon · Actualités</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <!-- Icons, used with <svg><use href="#i-..."/></svg> -->
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.83 2.83 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2M18 14h-8M15 18h-5M10 6h8v4h-8z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-error" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  </svg>
+
+  <!-- Sign in -------------------------------------------------------------->
+  <div class="login-screen" id="login-view" hidden>
+    <div class="lang-switch lang-switch--corner" role="group" aria-label="Langue / Language">
+      <button type="button" class="lang-switch__option" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="login">
+      <div class="login__head">
+        <div class="brand brand--lg">
+          <img class="brand__logo" src="logo.png" alt="">
+          <span class="brand__name">Leptumon</span>
+        </div>
+        <h1 class="login__title" data-i18n="login.title"></h1>
+        <p class="muted" data-i18n="login.help"></p>
+      </div>
+
+      <div class="glass login__card">
+        <div class="alert" id="login-error" role="alert" hidden>
+          <svg class="icon"><use href="#i-alert"/></svg>
+          <div>
+            <p class="alert__title" data-i18n="login.error_title"></p>
+            <p class="alert__text" id="login-error-text"></p>
+          </div>
+        </div>
+
+        <form id="login-form" class="stack">
+          <div>
+            <label class="label" for="login-token" data-i18n="login.token"></label>
+            <div class="input-with-icon">
+              <svg class="icon"><use href="#i-key"/></svg>
+              <input class="input" id="login-token" type="password" autocomplete="current-password" required>
+            </div>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="login-remember">
+            <span data-i18n="login.remember"></span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--block btn--lg" data-i18n="login.submit"></button>
+        </form>
+
+        <div class="login__footer">
+          <p data-i18n="login.footer"></p>
+          <p class="dim" data-i18n="login.footer_hint"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard ------------------------------------------------------------>
+  <div id="app-view" hidden>
+    <nav class="nav">
+      <div class="nav__inner">
+        <div class="nav__left">
+          <div class="brand">
+            <img class="brand__logo" src="logo.png" alt="">
+            <span class="brand__name">Leptumon</span>
+          </div>
+          <div class="nav__links">
+            <a class="nav__link nav__link--active" href="./" data-i18n="nav.news"></a>
+          </div>
+        </div>
+        <div class="nav__right">
+          <div class="lang-switch" role="group" aria-label="Langue / Language">
+            <button type="button" class="lang-switch__option" data-lang="fr" aria-pressed="false">FR</button>
+            <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button type="button" class="nav__logout" id="logout">
+            <svg class="icon"><use href="#i-logout"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-head">
+        <div class="page-head__row">
+          <div>
+            <h1 class="page-title" data-i18n="list.title"></h1>
+            <p class="page-subtitle" data-i18n="list.subtitle"></p>
+          </div>
+          <button type="button" class="btn btn--primary btn--lg" data-action="new">
+            <svg class="icon"><use href="#i-plus"/></svg>
+            <span data-i18n="list.new"></span>
+          </button>
+        </div>
+        <div class="feed-row">
+          <span class="muted" data-i18n="list.feed"></span>
+          <code id="feed-url"></code>
+          <button type="button" class="btn btn--outline btn--sm" id="copy-feed">
+            <svg class="icon"><use href="#i-copy"/></svg>
+            <span data-i18n="list.copy"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid" id="news-grid"></div>
+
+      <div class="state" id="loading-state">
+        <div class="spinner"></div>
+        <p class="muted" data-i18n="list.loading"></p>
+      </div>
+
+      <div class="state" id="empty-state" hidden>
+        <svg class="state__icon"><use href="#i-news"/></svg>
+        <h3 class="state__title" data-i18n="list.empty_title"></h3>
+        <p class="muted" data-i18n="list.empty_text"></p>
+        <button type="button" class="btn btn--primary btn--lg" data-action="new">
+          <svg class="icon"><use href="#i-plus"/></svg>
+          <span data-i18n="list.new"></span>
+        </button>
+      </div>
+
+      <div class="state" id="error-state" hidden>
+        <svg class="state__icon state__icon--danger"><use href="#i-error"/></svg>
+        <h3 class="state__title" data-i18n="list.error_title"></h3>
+        <p class="muted" id="error-text"></p>
+        <button type="button" class="btn btn--outline btn--lg" id="retry" data-i18n="list.retry"></button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Create / edit -------------------------------------------------------->
+  <dialog class="modal" id="editor">
+    <form class="modal__body" id="editor-form" novalidate>
+      <div class="modal__head">
+        <h2 class="modal__title" id="editor-title"></h2>
+        <button type="button" class="modal__close" data-close>
+          <svg class="icon"><use href="#i-x"/></svg>
+        </button>
+      </div>
+
+      <div class="stack">
+        <div>
+          <label class="label" for="field-title">
+            <span data-i18n="editor.title"></span> *
+            <span class="counter" id="title-counter"></span>
+          </label>
+          <input class="input" id="field-title" type="text" maxlength="120" required>
+        </div>
+
+        <div>
+          <label class="label" for="field-description">
+            <span data-i18n="editor.description"></span> *
+            <span class="counter" id="description-counter"></span>
+          </label>
+          <textarea class="input" id="field-description" rows="7" maxlength="10000" required></textarea>
+          <p class="hint" data-i18n="editor.description_hint"></p>
+        </div>
+
+        <div>
+          <label class="label" for="field-image" data-i18n="editor.image"></label>
+          <div class="image-row">
+            <input class="input" id="field-image" type="text" inputmode="url" placeholder="https://example.com/image.jpg">
+            <button type="button" class="btn btn--outline" id="image-upload">
+              <svg class="icon"><use href="#i-upload"/></svg>
+              <span data-i18n="editor.upload"></span>
+            </button>
+            <input type="file" id="image-file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+          </div>
+          <p class="hint" data-i18n="editor.image_hint"></p>
+          <div class="image-preview" id="image-preview" hidden>
+            <img id="image-preview-img" alt="">
+            <button type="button" class="image-preview__remove" id="image-clear">
+              <svg class="icon"><use href="#i-x"/></svg>
+              <span data-i18n="editor.remove"></span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="label" for="field-url" data-i18n="editor.link"></label>
+          <input class="input" id="field-url" type="url" placeholder="https://discord.gg/...">
+          <p class="hint" data-i18n="editor.link_hint"></p>
+        </div>
+      </div>
+
+      <div class="alert" id="editor-error" role="alert" hidden>
+        <svg class="icon"><use href="#i-alert"/></svg>
+        <p class="alert__text" id="editor-error-text"></p>
+      </div>
+
+      <div class="modal__actions">
+        <button type="button" class="btn btn--outline btn--lg" data-close data-i18n="common.cancel"></button>
+        <button type="submit" class="btn btn--primary btn--lg" id="editor-save"></button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Delete confirmation -------------------------------------------------->
+  <dialog class="modal modal--sm" id="confirm-delete">
+    <form class="modal__body modal__body--center" method="dialog">
+      <svg class="modal__warning"><use href="#i-alert"/></svg>
+      <h3 class="modal__title" data-i18n="delete.title"></h3>
+      <p class="muted" id="confirm-delete-text"></p>
+      <div class="modal__actions modal__actions--center">
+        <button type="submit" value="cancel" class="btn btn--outline btn--lg" data-i18n="common.cancel"></button>
+        <button type="submit" value="delete" class="btn btn--danger btn--lg" data-i18n="delete.confirm"></button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>

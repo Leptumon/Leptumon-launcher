@@ -1,0 +1,67 @@
+@use '../base/variables' as vars;
+
+// Shared switch (components/Switch.tsx): 36×20 track, 16px thumb.
+// While pressed the thumb stretches toward its destination, like a native switch.
+.ui-switch {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 20px;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: vars.$radius-pill;
+    background-color: vars.$control-active;
+    cursor: pointer;
+    transition: background-color vars.$duration-base ease;
+
+    &:hover:not(:disabled) {
+        background-color: vars.$hairline-strong;
+    }
+
+    &__thumb {
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: vars.$radius-pill;
+        background-color: vars.$knob;
+        box-shadow: vars.$shadow-knob;
+        transition:
+            transform vars.$duration-base vars.$ease-out,
+            width vars.$duration-fast vars.$ease-out;
+    }
+
+    &:active:not(:disabled) &__thumb {
+        width: 19px;
+    }
+
+    &.is-on {
+        background-color: vars.$accent;
+
+        &:hover:not(:disabled) {
+            background-color: vars.$accent-hover;
+        }
+
+        .ui-switch__thumb {
+            transform: translateX(16px);
+        }
+
+        &:active:not(:disabled) .ui-switch__thumb {
+            transform: translateX(13px);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ui-switch,
+    .ui-switch__thumb {
+        transition: none;
+    }
+}
