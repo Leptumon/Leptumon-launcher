@@ -1,12 +1,12 @@
 {
   "microsoftClientId": "ac0cda15-bdc4-4e19-88bf-b1c884a0e8f7",
   "modpack": {
-    "manifestUrl": "https://leptunia.fr/leptmonV2/manifest.json"
+    "manifestUrl": "https://leptunia.fr/files/manifest.json"
   },
   "curseforge": {
     "apiKey": "",
-    "projectId": 1714332,
-    "fileId": 8991512
+    "projectId": 1356598,
+    "fileId": 8822048
   },
   "server": {
     "name": "Leptumon",
