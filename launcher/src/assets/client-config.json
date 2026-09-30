@@ -21,5 +21,9 @@
   },
   "updates": {
     "githubRepo": "Leptumon/Leptumon-launcher"
+  },
+  "telemetry": {
+    "trackingUrl": "https://leptunia.fr/log_launch.php",
+    "trackingSecret": "__TRACKING_SECRET__"
   }
 }

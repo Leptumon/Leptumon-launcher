@@ -25,6 +25,10 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      - name: Inject tracking secret
+        env:
+          TRACKING_SECRET: ${{ secrets.TRACKING_SECRET }}
+        run: node scripts/inject-secret.js
       - run: npm run make -- --platform=win32 --arch=x64
 
       - name: Rename and Upload Windows Artifacts
@@ -64,6 +68,10 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      - name: Inject tracking secret
+        env:
+          TRACKING_SECRET: ${{ secrets.TRACKING_SECRET }}
+        run: node scripts/inject-secret.js
       - run: npm run make -- --platform=darwin --arch=${{ matrix.arch }}
 
       - name: Rename and Upload macOS Artifacts
@@ -94,6 +102,10 @@ jobs:
           node-version: 22
       - run: sudo apt-get update && sudo apt-get install -y fakeroot dpkg rpm
       - run: npm ci
+      - name: Inject tracking secret
+        env:
+          TRACKING_SECRET: ${{ secrets.TRACKING_SECRET }}
+        run: node scripts/inject-secret.js
       - run: npm run make -- --platform=linux --arch=x64
 
       - name: Rename and Upload Linux Artifacts

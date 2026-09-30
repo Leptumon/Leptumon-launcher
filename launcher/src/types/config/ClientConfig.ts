@@ -53,4 +53,17 @@ export type ClientConfig = {
     /** `owner/repo` whose GitHub Releases host launcher builds. Empty disables self-update. */
     githubRepo: string;
   };
+  /**
+   * Optional admin-side visibility into who is playing. When set, the launcher
+   * POSTs the player's Minecraft username, UUID and login type to `trackingUrl`
+   * (your own log_launch.php endpoint) right after a successful login, each
+   * time Play is pressed. `trackingSecret` is sent as the X-Telemetry-Secret
+   * header and must match the one in that endpoint's config.php. Note this
+   * secret ships inside the launcher, so treat it as spam-filtering, not a
+   * true secret. Empty `trackingUrl` disables the whole thing.
+   */
+  telemetry: {
+    trackingUrl: string;
+    trackingSecret: string;
+  };
 };

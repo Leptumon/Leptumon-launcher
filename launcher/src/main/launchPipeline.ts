@@ -33,6 +33,7 @@ import { ensureServerListed } from '../core/server/serversDat';
 import { parseServerAddress } from '../core/server/status';
 import { loadClientConfig } from '../core/utils/clientConfig';
 import { logger } from '../core/utils/logger';
+import { reportLaunch } from '../core/utils/playerTelemetry';
 import { t } from '../i18n';
 import { AuthConfig } from '../types/config/LauncherConfig';
 
@@ -198,6 +199,18 @@ export const runLaunchPipeline = async (deps: LaunchPipelineDeps): Promise<Launc
   if (!auth) {
     return { success: false, error: t('errors.no_account') };
   }
+
+  // Fire-and-forget: admin-side "who is playing" log. Never awaited, so a slow
+  // or unreachable webhook can't delay or fail the actual launch.
+  loadClientConfig()
+    .then((cfg) =>
+      reportLaunch(cfg.telemetry.trackingUrl, cfg.telemetry.trackingSecret, {
+        username: auth.username,
+        uuid: auth.uuid,
+        loginType: auth.loginType === 'offline' ? 'offline' : 'microsoft',
+      }),
+    )
+    .catch((e) => logger.error('Launch telemetry setup failed: ' + (e as Error).message));
 
   const dataDir = getLauncherDataPath().base;
   const instanceDir = getInstanceMinecraftPath();

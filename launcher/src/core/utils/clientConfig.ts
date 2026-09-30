@@ -30,6 +30,7 @@ const normalize = (raw: unknown): ClientConfig => {
   const links = asObject(root.links);
   const news = asObject(root.news);
   const updates = asObject(root.updates);
+  const telemetry = asObject(root.telemetry);
 
   return {
     microsoftClientId: asString(root.microsoftClientId),
@@ -54,6 +55,10 @@ const normalize = (raw: unknown): ClientConfig => {
     },
     updates: {
       githubRepo: asString(updates.githubRepo),
+    },
+    telemetry: {
+      trackingUrl: asString(telemetry.trackingUrl),
+      trackingSecret: asString(telemetry.trackingSecret),
     },
   };
 };
